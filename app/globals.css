@@ -1,26 +1,222 @@
 @import "tailwindcss";
 
+/* Brand tokens. Light by default, dark via system preference or data-theme. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --blue: #2e3191;
+  --blue-deep: #24276f;
+  --orange: #f26f21;
+  --orange-ink: #c9561a;
+  --bg: #ffffff;
+  --surface: #f7f4ee;
+  --band: #ede7dc;
+  --fg: #231f20;
+  --muted: #5d5966;
+  --head: #2e3191;
+  --line: #e3ddd2;
+  --chip: #e9eaf5;
+  --chip-fg: #2e3191;
+  --on-blue-muted: #c9cbea;
+  --ok: #2f7d4f;
+  --no: #a8452a;
+  color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme="light"]) {
+    --bg: #14151e;
+    --surface: #1b1d29;
+    --band: #20222f;
+    --fg: #f0ece5;
+    --muted: #a8a5b3;
+    --head: #c8caf4;
+    --line: #2d2f41;
+    --chip: #272a48;
+    --chip-fg: #c8caf4;
+    --blue-deep: #22256a;
+    --on-blue-muted: #c3c5ec;
+    --orange-ink: #f58a4b;
+    --ok: #6cc08f;
+    --no: #e58a6c;
+    color-scheme: dark;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+:root[data-theme="dark"] {
+  --bg: #14151e;
+  --surface: #1b1d29;
+  --band: #20222f;
+  --fg: #f0ece5;
+  --muted: #a8a5b3;
+  --head: #c8caf4;
+  --line: #2d2f41;
+  --chip: #272a48;
+  --chip-fg: #c8caf4;
+  --blue-deep: #22256a;
+  --on-blue-muted: #c3c5ec;
+  --orange-ink: #f58a4b;
+  --ok: #6cc08f;
+  --no: #e58a6c;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-brand: var(--blue);
+  --color-brand-deep: var(--blue-deep);
+  --color-accent: var(--orange);
+  --color-accent-ink: var(--orange-ink);
+  --color-peach: #ffb98e;
+  --color-charcoal: #231f20;
+  --color-sand: #ede7dc;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-band: var(--band);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-head: var(--head);
+  --color-line: var(--line);
+  --color-chip: var(--chip);
+  --color-chip-fg: var(--chip-fg);
+  --color-on-blue-muted: var(--on-blue-muted);
+  --color-ok: var(--ok);
+  --color-no: var(--no);
+  --color-pipe-orange: #f26f21;
+  --color-pipe-green: #2e9d5a;
+  --color-pipe-red: #d2342c;
+
+  --font-sans:
+    var(--font-poppins), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+  --font-mono:
+    var(--font-plex-mono), ui-monospace, SFMono-Regular, Menlo, Consolas,
+    monospace;
+
+  --container-wrap: 1180px;
+  --radius-r: 6px;
+
+  --animate-zone: zone 3.2s ease-in-out infinite;
+  --animate-drop: drop 2.4s linear infinite;
+
+  @keyframes zone {
+    0%,
+    100% {
+      opacity: 0.35;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+  @keyframes drop {
+    from {
+      transform: translateY(0);
+      opacity: 0.9;
+    }
+    to {
+      transform: translateY(18px);
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-bg font-sans text-base/[1.65] text-fg antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply m-0 font-sans leading-[1.15] text-balance text-head;
+  }
+  h1 {
+    @apply text-[clamp(2.2rem,5.2vw,3.9rem)] font-extrabold tracking-[-0.02em];
+  }
+  h2 {
+    @apply text-[clamp(1.6rem,3.2vw,2.4rem)] font-bold tracking-[-0.01em];
+  }
+  h3 {
+    @apply text-[1.15rem] font-semibold;
+  }
+  p {
+    @apply m-0 max-w-[66ch];
+  }
+  :focus-visible {
+    @apply rounded-[3px] outline-3 outline-offset-3 outline-accent;
+  }
+}
+
+/* Shared primitives. Kept as classes because the blue bands restyle them. */
+@layer components {
+  .wrap {
+    @apply mx-auto max-w-wrap px-[clamp(16px,4vw,40px)];
+  }
+  .section {
+    @apply py-[clamp(56px,8vw,96px)];
+  }
+  .eyebrow {
+    @apply font-mono text-[0.78rem] font-medium tracking-[0.12em] text-accent-ink uppercase;
+  }
+  .lead {
+    @apply text-[1.12rem] text-muted;
+  }
+
+  .btn {
+    @apply inline-flex cursor-pointer items-center gap-2.5 rounded-r border-2 border-transparent px-[22px] py-[13px] font-sans text-[0.95rem] font-semibold no-underline transition-colors duration-150;
+  }
+  .btn-primary {
+    @apply bg-accent text-white hover:bg-accent-ink hover:text-white;
+  }
+  .btn-ghost {
+    @apply border-current bg-transparent text-head hover:bg-head hover:text-bg;
+  }
+  .btn .arr {
+    @apply transition-transform duration-150 motion-reduce:transition-none;
+  }
+  .btn:hover .arr {
+    @apply translate-x-[3px];
+  }
+
+  .on-blue {
+    @apply bg-brand text-white;
+  }
+  .on-blue :is(h1, h2, h3) {
+    @apply text-white;
+  }
+  .on-blue :is(.lead, p) {
+    @apply text-on-blue-muted;
+  }
+  .on-blue .eyebrow {
+    @apply text-peach;
+  }
+  .on-blue .btn-ghost {
+    @apply text-white hover:bg-white hover:text-brand;
+  }
+
+  /* Tables */
+  .tbl-wrap {
+    @apply overflow-x-auto rounded-r border border-line bg-bg;
+  }
+  .tbl {
+    @apply w-full border-collapse text-[0.92rem] tabular-nums;
+  }
+  .tbl :is(th, td) {
+    @apply border-b border-line px-4 py-[13px] text-left align-top;
+  }
+  .tbl tr:last-child :is(td, th) {
+    @apply border-b-0;
+  }
+  .tbl thead th {
+    @apply bg-surface font-sans text-[0.85rem] font-semibold whitespace-nowrap text-head;
+  }
+  .tbl tbody th {
+    @apply min-w-[200px] font-medium text-fg;
+  }
+  .tbl .mono {
+    @apply font-mono text-[0.88rem];
+  }
+  .cmp :is(td, th):nth-child(2) {
+    @apply bg-chip font-semibold text-chip-fg;
+  }
+  .cmp thead th:nth-child(2) {
+    @apply bg-brand text-white;
+  }
 }
