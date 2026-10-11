@@ -3,6 +3,7 @@ import ButtonLink, { ButtonRow } from "./components/button";
 import ComparisonTable, {
   type ComparisonRow,
 } from "./components/comparison-table";
+import CountUp from "./components/count-up";
 import CtaBand from "./components/cta-band";
 import FactCards, { type Fact } from "./components/fact-cards";
 import HeroDiagram from "./components/hero-diagram";
@@ -13,7 +14,7 @@ const stats = [
   { value: "150+", label: "installations in Sri Lanka" },
   { value: "10,000+", label: "installations worldwide" },
   { value: "30–50 yrs", label: "working life when concealed" },
-  { value: "ISO 9001", label: ":2015 certified manufacturing" },
+  { value: "ISO 9001", label: ":2015 certified manufacturing", static: true },
 ];
 
 const audiences = [
@@ -179,7 +180,7 @@ export default function Home() {
                 className="border-l border-white/18 px-5 pt-5.5 pb-6.5 first:border-l-0 first:pl-0 max-[860px]:nth-[3]:border-l-0 max-[860px]:nth-[3]:pl-0 max-[860px]:nth-[n+3]:border-t"
               >
                 <b className="block font-sans text-[clamp(1.6rem,3vw,2.2rem)] leading-[1.1] font-extrabold text-white tabular-nums">
-                  {stat.value}
+                  {"static" in stat ? stat.value : <CountUp value={stat.value} />}
                 </b>
                 <span className="text-[0.82rem] text-on-blue-muted">
                   {stat.label}

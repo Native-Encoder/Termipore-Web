@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import BrandMark from "../brand-mark";
+import Image from "next/image";
 
 const mainLinks = [
   { href: "/system", label: "The system" },
@@ -31,15 +31,16 @@ export default function Header() {
         <Link
           href="/"
           aria-label="Termipore home"
-          className="flex items-center gap-2.5 no-underline"
+          className="flex items-center no-underline"
         >
-          <BrandMark className="size-7.5 flex-none" />
-          <span className="font-sans text-[1.3rem] leading-none font-extrabold tracking-[0.04em] text-head">
-            TERMIPORE
-            <small className="mt-1 block font-mono text-[0.6rem] font-normal tracking-[0.14em] text-muted">
-              SRI LANKA
-            </small>
-          </span>
+          <Image
+            src="/logo-footer.png"
+            alt="Termipore"
+            width={917}
+            height={248}
+            priority
+            className="logo-dark h-11 w-auto"
+          />
         </Link>
 
         <button
