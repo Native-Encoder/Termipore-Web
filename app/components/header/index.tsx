@@ -7,7 +7,7 @@ import BrandMark from "../brand-mark";
 
 const mainLinks = [
   { href: "/system", label: "The system" },
-  { href: "/specs", label: "Specifications" },
+  { href: "/specifications", label: "Specifications" },
   { href: "/installers", label: "Installers" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },

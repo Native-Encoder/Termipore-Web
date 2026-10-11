@@ -39,7 +39,7 @@ const faqs: FaqItem[] = [
         17 mm (green) suits all areas and is the usual choice. 14 mm (orange) is
         for limited space between slab and tile. 19 mm (red) gives the most
         consistent flow along long runs. See{" "}
-        <Link href="/specs">Specifications</Link>.
+        <Link href="/specifications">Specifications</Link>.
       </>
     ),
   },
