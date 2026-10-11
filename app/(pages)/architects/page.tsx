@@ -80,7 +80,7 @@ export default function ArchitectsPage() {
         >
           Book a briefing
         </ButtonLink>
-        <ButtonLink href="/specs" variant="ghost">
+        <ButtonLink href="/specifications" variant="ghost">
           Specifications
         </ButtonLink>
       </CtaBand>

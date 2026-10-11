@@ -161,7 +161,7 @@ export default function Home() {
                 <ButtonLink href="/installers" arrow>
                   Find a certified installer
                 </ButtonLink>
-                <ButtonLink href="/specs" variant="ghost">
+                <ButtonLink href="/specifications" variant="ghost">
                   Technical specifications
                 </ButtonLink>
               </ButtonRow>
@@ -260,7 +260,7 @@ export default function Home() {
         <ButtonLink href="/contact" arrow>
           Request a quote
         </ButtonLink>
-        <ButtonLink href="/specs" variant="ghost">
+        <ButtonLink href="/specifications" variant="ghost">
           Get the TDS
         </ButtonLink>
       </CtaBand>

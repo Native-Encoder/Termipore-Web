@@ -102,7 +102,7 @@ export default function PcoPage() {
         >
           Trade enquiry
         </ButtonLink>
-        <ButtonLink href="/specs" variant="ghost">
+        <ButtonLink href="/specifications" variant="ghost">
           Full TDS
         </ButtonLink>
       </CtaBand>

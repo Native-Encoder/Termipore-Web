@@ -145,7 +145,7 @@ export default function SystemPage() {
       </Section>
 
       <CtaBand title="See the full technical data.">
-        <ButtonLink href="/specs" arrow>
+        <ButtonLink href="/specifications" arrow>
           Specifications
         </ButtonLink>
       </CtaBand>
