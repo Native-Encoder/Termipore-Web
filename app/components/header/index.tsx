@@ -26,7 +26,7 @@ export default function Header() {
   const current = (href: string) => (pathname === href ? "page" : undefined);
 
   return (
-    <header className="sticky top-[env(safe-area-inset-top,0px)] z-50 border-b border-line bg-bg">
+    <header className="sticky top-[env(safe-area-inset-top,0px)] z-50 border-b border-black/10 bg-sand text-charcoal">
       <div className="wrap flex min-h-17 items-center justify-between gap-5">
         <Link
           href="/"
@@ -34,18 +34,19 @@ export default function Header() {
           className="flex items-center no-underline"
         >
           <Image
-            src="/logo-footer.png"
+            src="/logo.png"
             alt="Termipore"
-            width={917}
-            height={248}
+            width={2169}
+            height={725}
+            quality={100}
             priority
-            className="logo-dark h-11 w-auto"
+            className="-ml-2 h-16 w-auto"
           />
         </Link>
 
         <button
           type="button"
-          className="hidden cursor-pointer rounded-r border border-line bg-transparent px-3 py-2 font-sans text-[0.9rem] font-semibold text-fg max-[960px]:block"
+          className="hidden cursor-pointer rounded-r border border-black/15 bg-transparent px-3 py-2 font-sans text-[0.9rem] font-semibold text-charcoal max-[960px]:block"
           aria-expanded={open}
           aria-controls="nav"
           onClick={() => setOpen((o) => !o)}
@@ -56,7 +57,7 @@ export default function Header() {
         <nav
           id="nav"
           aria-label="Main"
-          className={`flex items-center gap-1 max-[960px]:absolute max-[960px]:inset-x-0 max-[960px]:top-full max-[960px]:flex-col max-[960px]:items-stretch max-[960px]:border-b max-[960px]:border-line max-[960px]:bg-bg max-[960px]:px-4 max-[960px]:pt-3 max-[960px]:pb-4.5 ${open ? "" : "max-[960px]:hidden"}`}
+          className={`flex items-center gap-1 max-[960px]:absolute max-[960px]:inset-x-0 max-[960px]:top-full max-[960px]:flex-col max-[960px]:items-stretch max-[960px]:border-b max-[960px]:border-black/10 max-[960px]:bg-sand max-[960px]:px-4 max-[960px]:pt-3 max-[960px]:pb-4.5 ${open ? "" : "max-[960px]:hidden"}`}
         >
           {mainLinks.map((link) => (
             <Link
@@ -64,7 +65,7 @@ export default function Header() {
               href={link.href}
               aria-current={current(link.href)}
               onClick={() => setOpen(false)}
-              className="rounded-r px-3 py-2 text-[0.9rem] font-medium text-fg no-underline hover:bg-surface aria-[current=page]:text-accent-ink"
+              className="rounded-r px-3 py-2 text-[0.9rem] font-medium text-charcoal no-underline hover:bg-black/5 aria-[current=page]:text-[#c9561a]"
             >
               {link.label}
             </Link>
