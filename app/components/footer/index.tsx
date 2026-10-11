@@ -71,7 +71,9 @@ export default function Footer() {
         <span>
           Distributed in Sri Lanka by Ceylon Pest Control Company (Pvt) Ltd
         </span>
-        <span>© 2026 Termipore Sri Lanka</span>
+        <span>
+          © 2026 | <a href="https://147digitalsl.com" target="_blank" rel="noopener noreferrer">147 Digital SL</a>
+        </span>
       </div>
     </footer>
   );

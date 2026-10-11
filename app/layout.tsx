@@ -3,6 +3,7 @@ import { IBM_Plex_Mono, Poppins } from "next/font/google";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import "./globals.css";
+import { WhatsappButton } from "./components/icons";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <main>{children}</main>
         <Footer />
+        <WhatsappButton />
       </body>
     </html>
   );
