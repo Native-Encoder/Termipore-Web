@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const columns = [
@@ -30,9 +31,13 @@ export default function Footer() {
     <footer className="bg-charcoal text-[0.9rem] text-[#CFCAC2]">
       <div className="wrap grid grid-cols-1 gap-8 pt-14 pb-10 *:min-w-0 min-[521px]:grid-cols-2 min-[861px]:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
-          <div className="font-sans text-[1.4rem] font-extrabold tracking-[0.04em] text-white">
-            TERMIPORE
-          </div>
+          <Image
+            src="/logo-footer.png"
+            alt="Termipore"
+            width={917}
+            height={248}
+            className="mb-3 h-12 w-auto"
+          />
           <div className="text-[0.85rem]">Anti-Termite Reticulation System</div>
           <div className="mt-1.5 text-[#F7A06A] italic">
             Built Beneath. Protected for Life.
@@ -71,7 +76,9 @@ export default function Footer() {
         <span>
           Distributed in Sri Lanka by Ceylon Pest Control Company (Pvt) Ltd
         </span>
-        <span>© 2026 Termipore Sri Lanka</span>
+        <span>
+          © 2026 | <a href="https://147digitalsl.com" target="_blank" rel="noopener noreferrer">147 Digital SL</a>
+        </span>
       </div>
     </footer>
   );

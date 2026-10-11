@@ -220,3 +220,22 @@
     @apply bg-brand text-white;
   }
 }
+
+/* Header logo: swap to the light-text variant in dark mode. */
+.logo-dark {
+  display: none;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .logo-light {
+    display: none;
+  }
+  :root:not([data-theme="light"]) .logo-dark {
+    display: block;
+  }
+}
+:root[data-theme="dark"] .logo-light {
+  display: none;
+}
+:root[data-theme="dark"] .logo-dark {
+  display: block;
+}
