@@ -14,7 +14,9 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3001](http://localhost:3001) with your browser to see the result. (Port 3000 is left free for other local services.)
+
+The enquiry form posts to `${NEXT_PUBLIC_API_URL}/enquiries`. Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_API_URL` there (or in the hosting environment). The value is inlined at build time, so rebuild after changing it.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
