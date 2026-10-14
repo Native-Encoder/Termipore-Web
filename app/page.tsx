@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import ButtonLink, { ButtonRow } from "./components/button";
 import ComparisonTable, {
@@ -142,7 +143,15 @@ const evidence: Fact[] = [
 export default function Home() {
   return (
     <>
-      <section className="on-blue overflow-hidden pt-[clamp(48px,7vw,88px)]">
+      <section className="on-blue relative isolate overflow-hidden pt-[clamp(48px,7vw,88px)]">
+        <Image
+          src="/hero-bg.jpg"
+          alt=""
+          fill
+          preload
+          sizes="100vw"
+          className="-z-10 object-cover"
+        />
         <div className="wrap">
           <div className="grid grid-cols-1 items-center gap-[clamp(24px,4vw,56px)] *:min-w-0 min-[861px]:grid-cols-[1.05fr_1fr]">
             <div className="flex flex-col gap-5.5 pb-[clamp(32px,5vw,64px)]">
