@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 type SizeKey = "14" | "17" | "19";
@@ -19,6 +20,8 @@ const sizes: Record<
     bend: string;
     fit: string;
     n: number;
+    // Product photo in /public; null shows a placeholder until one is added.
+    image: string | null;
   }
 > = {
   "14": {
@@ -34,6 +37,7 @@ const sizes: Record<
     bend: "0.3 m / 1 ft",
     fit: "12 mm",
     n: 14,
+    image: "/14mm.png",
   },
   "17": {
     code: "TP125175",
@@ -48,6 +52,7 @@ const sizes: Record<
     bend: "0.3 m / 1 ft",
     fit: "16 mm",
     n: 17,
+    image: null, // TODO: "/17mm.png"
   },
   "19": {
     code: "TP125195",
@@ -62,6 +67,7 @@ const sizes: Record<
     bend: "0.4 m / 1.2 ft",
     fit: "16 mm",
     n: 20,
+    image: null, // TODO: "/19mm.png"
   },
 };
 
@@ -99,60 +105,78 @@ export default function SizePicker() {
 
   return (
     <div className="grid grid-cols-1 items-center gap-[clamp(24px,4vw,48px)] rounded-r border border-line bg-bg p-[clamp(20px,3vw,36px)] *:min-w-0 min-[821px]:grid-cols-[320px_1fr]">
-      <svg
-        className="mx-auto block h-auto w-full max-w-75"
-        viewBox="0 0 300 300"
-        role="img"
-        aria-label="Pipe cross-section for the selected size"
-      >
-        <circle
-          cx="150"
-          cy="150"
-          r={ro}
-          strokeWidth="2"
-          className="fill-surface stroke-head"
-        />
-        <circle
-          cx="150"
-          cy="150"
-          r={ri}
-          strokeWidth="2"
-          className="fill-bg stroke-line"
-        />
-        <g className="fill-accent">
-          {holes.map((h, i) => (
-            <circle key={i} cx={h.cx} cy={h.cy} r="2.6" />
-          ))}
-        </g>
-        <rect
-          x="140"
-          y={150 - ro + 4}
-          width="20"
-          height="10"
-          rx="2"
-          fill={s.color}
-        />
-        <text
-          x="150"
-          y="146"
-          textAnchor="middle"
-          fontFamily="IBM Plex Mono, monospace"
-          fontSize="15"
-          className="fill-muted"
+      <div className="flex flex-col items-center gap-6">
+        <svg
+          className="mx-auto block h-auto w-full max-w-75"
+          viewBox="0 0 300 300"
+          role="img"
+          aria-label="Pipe cross-section for the selected size"
         >
-          ID {s.id}
-        </text>
-        <text
-          x="150"
-          y="168"
-          textAnchor="middle"
-          fontFamily="IBM Plex Mono, monospace"
-          fontSize="15"
-          className="fill-head"
-        >
-          OD {s.od} mm
-        </text>
-      </svg>
+          <circle
+            cx="150"
+            cy="150"
+            r={ro}
+            strokeWidth="2"
+            className="fill-surface stroke-head"
+          />
+          <circle
+            cx="150"
+            cy="150"
+            r={ri}
+            strokeWidth="2"
+            className="fill-bg stroke-line"
+          />
+          <g className="fill-accent">
+            {holes.map((h, i) => (
+              <circle key={i} cx={h.cx} cy={h.cy} r="2.6" />
+            ))}
+          </g>
+          <rect
+            x="140"
+            y={150 - ro + 4}
+            width="20"
+            height="10"
+            rx="2"
+            fill={s.color}
+          />
+          <text
+            x="150"
+            y="146"
+            textAnchor="middle"
+            fontFamily="IBM Plex Mono, monospace"
+            fontSize="15"
+            className="fill-muted"
+          >
+            ID {s.id}
+          </text>
+          <text
+            x="150"
+            y="168"
+            textAnchor="middle"
+            fontFamily="IBM Plex Mono, monospace"
+            fontSize="15"
+            className="fill-head"
+          >
+            OD {s.od} mm
+          </text>
+        </svg>
+        <div className="relative aspect-square w-full max-w-75 overflow-hidden rounded-r border border-line bg-surface">
+          {s.image ? (
+            <Image
+              key={s.image}
+              src={s.image}
+              alt={`${s.code} ${key} mm pipe, ${s.line.toLowerCase()}`}
+              fill
+              sizes="300px"
+              className="object-contain"
+            />
+          ) : (
+            <div className="flex h-full items-center justify-center border-2 border-dashed border-line font-mono text-[0.8rem] text-muted">
+              {key} mm image coming soon
+            </div>
+          )}
+        </div>
+      </div>
 
       <div>
         <div

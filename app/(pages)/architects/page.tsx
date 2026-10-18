@@ -49,7 +49,7 @@ export default function ArchitectsPage() {
         eyebrow="For architects & specifiers"
         title="Specify termite protection that outlasts the treatment."
         lead="A soil treatment is a single event. A Termipore network is a building element with a design life, a fixed specification and test data behind it. It belongs on the drawings."
-        image="/architects-hero.png"
+        image="/architect.png"
       />
 
       <Section>

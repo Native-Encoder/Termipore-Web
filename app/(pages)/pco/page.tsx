@@ -56,6 +56,7 @@ export default function PcoPage() {
         eyebrow="For pest control companies"
         title="The pipe you can warrant."
         lead="Your reputation rides on what happens under the floor after you leave site. Termipore delivers termiticide evenly along the whole run, so the protection you quote is the protection the client gets."
+        image="/pest.png"
       />
 
       <Section>

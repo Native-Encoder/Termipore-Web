@@ -25,6 +25,7 @@ export default function InstallersPage() {
         eyebrow="Certified installer directory"
         title="Installed by people trained on the system."
         lead="Certified installers lay, connect and charge Termipore to the manufacturer's guidelines. Contact one directly, or send an enquiry and we'll connect you with the nearest installer."
+        image="/installers.png"
       />
 
       <Section>

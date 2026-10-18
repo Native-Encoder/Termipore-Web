@@ -145,7 +145,7 @@ export default function Home() {
     <>
       <section className="on-blue relative isolate overflow-hidden pt-[clamp(48px,7vw,88px)]">
         <Image
-          src="/hero-bg.jpg"
+          src="/home-hero.png"
           alt=""
           fill
           preload
