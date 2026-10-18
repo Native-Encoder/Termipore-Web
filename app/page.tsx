@@ -266,7 +266,7 @@ export default function Home() {
         <FactCards items={evidence} />
       </Section>
 
-      <CtaBand title="Planning a slab pour? Bring Termipore in at design stage.">
+      <CtaBand title="Planning a slab pour? Bring Termipore in at design stage." image="/request.png">
         <ButtonLink href="/contact" arrow>
           Request a quote
         </ButtonLink>
