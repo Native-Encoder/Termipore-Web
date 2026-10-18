@@ -78,6 +78,7 @@ export default function BuildersPage() {
         eyebrow="For construction companies & developers"
         title="Termite protection that fits the programme and survives handover."
         lead="Termipore goes in between the PCC and the floor finish. Done right, it's a short, contained activity that gives your buyers protection they can maintain without ever lifting a tile."
+        image="/engineer.png"
       />
 
       <Section>
@@ -100,7 +101,7 @@ export default function BuildersPage() {
         </Split>
       </Section>
 
-      <CtaBand title="Price Termipore into your next project.">
+      <CtaBand title="Price Termipore into your next project." image="/request.png">
         <ButtonLink
           href={{ pathname: "/contact", query: { topic: "Project quote" } }}
           arrow

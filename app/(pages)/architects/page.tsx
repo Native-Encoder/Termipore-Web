@@ -49,7 +49,7 @@ export default function ArchitectsPage() {
         eyebrow="For architects & specifiers"
         title="Specify termite protection that outlasts the treatment."
         lead="A soil treatment is a single event. A Termipore network is a building element with a design life, a fixed specification and test data behind it. It belongs on the drawings."
-        image="/architects-hero.png"
+        image="/architect.png"
       />
 
       <Section>
@@ -74,7 +74,7 @@ export default function ArchitectsPage() {
         <FactCards items={coordination} columns={2} />
       </Section>
 
-      <CtaBand title="Get a technical briefing for your practice.">
+      <CtaBand title="Get a technical briefing for your practice." image="/request.png">
         <ButtonLink
           href={{ pathname: "/contact", query: { topic: "Technical briefing" } }}
           arrow

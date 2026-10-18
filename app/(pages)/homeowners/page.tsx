@@ -21,6 +21,7 @@ export default function HomeownersPage() {
         eyebrow="For homeowners"
         title="Decide before the floor goes down."
         lead="Termipore is installed while your house is being built. Once tiles are laid, the chance has passed. A short conversation with your builder now saves drilling through your floors later."
+        image="/home-owners.png"
       />
 
       <Section>
@@ -47,7 +48,7 @@ export default function HomeownersPage() {
         </Split>
       </Section>
 
-      <CtaBand title="Building now? Find an installer near you.">
+      <CtaBand title="Building now? Find an installer near you." image="/request.png">
         <ButtonLink href="/installers" arrow>
           Certified installers
         </ButtonLink>

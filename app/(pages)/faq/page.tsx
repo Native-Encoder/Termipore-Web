@@ -53,7 +53,10 @@ const faqs: FaqItem[] = [
 export default function FaqPage() {
   return (
     <>
-      <PageHero eyebrow="FAQ" title="Common questions" />
+      <PageHero eyebrow="FAQ"
+        title="Common questions"
+        image="/faq.png"
+      />
       <Section narrow>
         <FaqList items={faqs} />
       </Section>
