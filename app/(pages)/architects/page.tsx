@@ -74,7 +74,7 @@ export default function ArchitectsPage() {
         <FactCards items={coordination} columns={2} />
       </Section>
 
-      <CtaBand title="Get a technical briefing for your practice.">
+      <CtaBand title="Get a technical briefing for your practice." image="/request.png">
         <ButtonLink
           href={{ pathname: "/contact", query: { topic: "Technical briefing" } }}
           arrow

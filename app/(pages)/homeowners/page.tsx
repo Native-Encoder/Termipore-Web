@@ -48,7 +48,7 @@ export default function HomeownersPage() {
         </Split>
       </Section>
 
-      <CtaBand title="Building now? Find an installer near you.">
+      <CtaBand title="Building now? Find an installer near you." image="/request.png">
         <ButtonLink href="/installers" arrow>
           Certified installers
         </ButtonLink>

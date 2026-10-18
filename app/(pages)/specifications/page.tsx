@@ -202,7 +202,7 @@ export default function SpecsPage() {
         </Split>
       </Section>
 
-      <CtaBand title="Need the TDS, test reports or a sample roll?">
+      <CtaBand title="Need the TDS, test reports or a sample roll?" image="/request.png">
         <ButtonLink href={{ pathname: "/contact", query: { topic: "TDS / test reports" } }} arrow>
           Request documents
         </ButtonLink>

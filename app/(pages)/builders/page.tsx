@@ -101,7 +101,7 @@ export default function BuildersPage() {
         </Split>
       </Section>
 
-      <CtaBand title="Price Termipore into your next project.">
+      <CtaBand title="Price Termipore into your next project." image="/request.png">
         <ButtonLink
           href={{ pathname: "/contact", query: { topic: "Project quote" } }}
           arrow

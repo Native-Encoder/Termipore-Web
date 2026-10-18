@@ -96,7 +96,7 @@ export default function PcoPage() {
         </Split>
       </Section>
 
-      <CtaBand title="Talk to the distributor about supply.">
+      <CtaBand title="Talk to the distributor about supply." image="/request.png">
         <ButtonLink
           href={{ pathname: "/contact", query: { topic: "Trade supply" } }}
           arrow

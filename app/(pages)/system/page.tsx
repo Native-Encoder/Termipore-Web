@@ -145,7 +145,7 @@ export default function SystemPage() {
         <ComparisonTable rows={comparison} />
       </Section>
 
-      <CtaBand title="See the full technical data.">
+      <CtaBand title="See the full technical data." image="/request.png">
         <ButtonLink href="/specifications" arrow>
           Specifications
         </ButtonLink>
