@@ -3,15 +3,15 @@ import {
   architectHome,
   engineerHome,
   pestHome,
-  evidenceSpecifierFirst,
-  evidenceSpecifierSecond,
-  evidenceSpecifierThird,
-  evidenceSpecifierFourth,
-  evidenceSpecifierFifth,
-  evidenceSpecifierSixth,
   homeHero,
   requestCta,
-  homeOwnersHome
+  homeOwnersHome,
+  firstImage,
+  secondImage,
+  thirdImage,
+  fourthImage,
+  fifthImage,
+  sixthImage
 } from "@/public/assets";
 import Link from "next/link";
 import ButtonLink, { ButtonRow } from "./components/button";
@@ -130,37 +130,37 @@ const evidence: Fact[] = [
     label: "",
     title: "300 hours ≈ 10 years outdoors",
     text: "No cracking, blocking or jetting. Uniform flow on all sides. Tensile strength and elongation reduced by about 10%.",
-    image: evidenceSpecifierFirst,
+    image: firstImage,
   },
   {
     label: "",
     title: "No slow crack growth",
     text: "Environmental stress-crack resistance tested at 50 °C for 24 hours.",
-    image: evidenceSpecifierSecond,
+    image: secondImage,
   },
   {
     label: "",
     title: "No banned hazardous substances",
     text: "Compliant with RoHS Annex II and amendment (EU) 2015/863. Test reports on request.",
-    image: evidenceSpecifierThird,
+    image: thirdImage,
   },
   {
     label: "",
     title: "EC and SC formulations",
     text: "Tested with both. Emulsifiable concentrates are preferred for flow.",
-    image: evidenceSpecifierFourth,
+    image: fourthImage,
   },
   {
     label: "",
     title: "ISO 9001:2015",
     text: "Certified process, with flow rate checked on every roll before dispatch.",
-    image: evidenceSpecifierFifth,
+    image: fifthImage,
   },
   {
     label: "",
     title: "QR code on every roll",
     text: "Scan on site to confirm genuine Termipore and reach technical support.",
-    image: evidenceSpecifierSixth,
+    image: sixthImage,
   },
 ];
 

@@ -16,12 +16,12 @@ export { default as architectHome } from "./images/home-page/architect-home.png"
 export { default as engineerHome } from "./images/home-page/engineer-home.png";
 export { default as pestHome } from "./images/home-page/pest-home.png";
 export { default as homeOwnersHome } from "./images/home-page/homeowner-home.png";
-export { default as evidenceSpecifierFirst } from "./images/home-page/evidence-specifier-first.png";
-export { default as evidenceSpecifierSecond } from "./images/home-page/evidence-specifier-second.png";
-export { default as evidenceSpecifierThird } from "./images/home-page/evidence-specifier-third.png";
-export { default as evidenceSpecifierFourth } from "./images/home-page/evidence-specifier-fourth.png";
-export { default as evidenceSpecifierFifth } from "./images/home-page/evidence-specifier-fifth.png";
-export { default as evidenceSpecifierSixth } from "./images/home-page/evidence-specifier-sixth.png";
+export {default as firstImage} from "./images/home-page/1.png";
+export {default as secondImage} from "./images/home-page/2.png";
+export {default as thirdImage} from "./images/home-page/3.png";
+export {default as fourthImage} from "./images/home-page/4.png";
+export {default as fifthImage} from "./images/home-page/5.png";
+export {default as sixthImage} from "./images/home-page/6.png";
 
 // Primary page heroes
 export { default as faqHero } from "./images/primary-hero/FAQ.png";
@@ -49,3 +49,17 @@ export { default as systemTermi } from "./images/system-page/termi.png";
 
 // Home Owners page
 export { default as homeOwnersFirst } from "./images/homeowners-page/web images.png";
+
+// Pest Control Companies page
+export { default as pestFirst } from "./images/pest-control-companies/pest-first.png";
+export { default as pestSecond } from "./images/pest-control-companies/pest-second.png";
+export { default as pestThird } from "./images/pest-control-companies/pest-third.png";
+export { default as pestFourth } from "./images/pest-control-companies/pest-fourth.png";
+export { default as pestFifth } from "./images/pest-control-companies/pest-fifth.png";
+export { default as pestSixth } from "./images/pest-control-companies/pest-sixth.png";
+
+// Constrction Page
+export { default as constructionFirst } from "./images/construction-page/construction-first.png";
+export { default as constructionSecond } from "./images/construction-page/construction-second.png";
+export { default as constructionThird } from "./images/construction-page/construction-third.png";
+export { default as constructionFourth } from "./images/construction-page/construction-fourth.png";
