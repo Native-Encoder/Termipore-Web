@@ -55,7 +55,7 @@ export default function FaqPage() {
     <>
       <PageHero eyebrow="FAQ"
         title="Common questions"
-        image="/FAQ.png"
+        image="/primary-hero-images/FAQ.png"
       />
       <Section narrow>
         <FaqList items={faqs} />

@@ -33,6 +33,7 @@ export default function FactCards({
                 alt=""
                 fill
                 sizes="(min-width: 861px) 33vw, (min-width: 561px) 50vw, 100vw"
+                quality={100}
                 className="object-cover"
               />
             </div>

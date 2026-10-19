@@ -25,6 +25,7 @@ const audiences = [
     title: "Architects & specifiers",
     text: "Specification clause, size selection, junction box layout and the coordination points to put on your drawings.",
     go: "For architects →",
+    image: "/home-page-images/architect-home.png",
   },
   {
     href: "/builders",
@@ -109,40 +110,40 @@ const steps: Step[] = [
 
 const evidence: Fact[] = [
   {
-    label: "Accelerated weathering",
+    label: "",
     title: "300 hours ≈ 10 years outdoors",
     text: "No cracking, blocking or jetting. Uniform flow on all sides. Tensile strength and elongation reduced by about 10%.",
-    image: "/1.png",
+    image: "/home-page-images/1.png",
   },
   {
-    label: "ESCR · Igepal method",
+    label: "",
     title: "No slow crack growth",
     text: "Environmental stress-crack resistance tested at 50 °C for 24 hours.",
-    image: "/2.png",
+    image: "/home-page-images/2.png",
   },
   {
-    label: "RoHS · 2011/65/EU",
+    label: "",
     title: "No banned hazardous substances",
     text: "Compliant with RoHS Annex II and amendment (EU) 2015/863. Test reports on request.",
-    image: "/3.png",
+    image: "/home-page-images/3.png",
   },
   {
-    label: "Termiticide compatibility",
+    label: "",
     title: "EC and SC formulations",
     text: "Tested with both. Emulsifiable concentrates are preferred for flow.",
-    image: "/4.png",
+    image: "/home-page-images/4.png",
   },
   {
-    label: "Manufacturing",
+    label: "",
     title: "ISO 9001:2015",
     text: "Certified process, with flow rate checked on every roll before dispatch.",
-    image: "/5.png",
+    image: "/home-page-images/5.png",
   },
   {
-    label: "Authenticity",
+    label: "",
     title: "QR code on every roll",
     text: "Scan on site to confirm genuine Termipore and reach technical support.",
-    image: "/6.png",
+    image: "/home-page-images/6.png",
   },
 ];
 
@@ -218,6 +219,18 @@ export default function Home() {
               href={a.href}
               className="flex flex-col gap-3 border-line px-6 pt-7 pb-6.5 no-underline transition-colors duration-150 hover:bg-surface max-[560px]:not-first:border-t min-[561px]:max-[960px]:even:border-l min-[561px]:max-[960px]:nth-[n+3]:border-t min-[961px]:not-first:border-l"
             >
+              {a.image && (
+                <div className="relative -mx-6 -mt-7 mb-1 aspect-5/4 border-b border-line bg-surface">
+                  <Image
+                    src={a.image}
+                    alt=""
+                    fill
+                    sizes="(min-width: 961px) 25vw, (min-width: 561px) 50vw, 100vw"
+                    quality={100}
+                    className="object-cover"
+                  />
+                </div>
+              )}
               <span className="font-mono text-[0.72rem] tracking-[0.1em] text-muted uppercase">
                 {a.tag}
               </span>

@@ -37,7 +37,7 @@ const sizes: Record<
     bend: "0.3 m / 1 ft",
     fit: "12 mm",
     n: 14,
-    image: "/14mm.png",
+    image: "/specification-page-images/14mm.png",
   },
   "17": {
     code: "TP125175",
@@ -52,7 +52,7 @@ const sizes: Record<
     bend: "0.3 m / 1 ft",
     fit: "16 mm",
     n: 17,
-    image: "/17mm.png"    
+    image: "/specification-page-images/17mm.png"    
   },
   "19": {
     code: "TP125195",
@@ -67,7 +67,7 @@ const sizes: Record<
     bend: "0.4 m / 1.2 ft",
     fit: "16 mm",
     n: 20,
-    image: "/19mm.png"
+    image: "/specification-page-images/19mm.png"
   },
 };
 

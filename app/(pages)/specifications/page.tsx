@@ -120,7 +120,7 @@ export default function SpecsPage() {
         eyebrow="Technical data · TDS REV 2.4"
         title="Specifications"
         lead="Elastomeric Reticulation Pipe in three sizes, supplied on 125 m rolls with a coloured marking line for identification on site."
-        image="/specifications.png"
+        image="/primary-hero-images/specifications.png"
       />
 
       <Section>
