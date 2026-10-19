@@ -1,3 +1,4 @@
+import { specificationsHero } from "@/public/assets";
 import type { Metadata } from "next";
 import ButtonLink from "../../components/button";
 import CtaBand from "../../components/cta-band";
@@ -120,7 +121,7 @@ export default function SpecsPage() {
         eyebrow="Technical data · TDS REV 2.4"
         title="Specifications"
         lead="Elastomeric Reticulation Pipe in three sizes, supplied on 125 m rolls with a coloured marking line for identification on site."
-        image="/primary-hero-images/specifications.png"
+        image={specificationsHero}
       />
 
       <Section>

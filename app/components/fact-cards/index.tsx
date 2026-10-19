@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 
 export type Fact = {
   label: string;
   title: string;
   text: string;
   highlight?: boolean;
-  image?: string;
+  image?: string | StaticImageData;
 };
 
 export default function FactCards({

@@ -1,6 +1,7 @@
 "use client";
 
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
+import { pipe14mm, pipe17mm, pipe19mm } from "@/public/assets";
 import { useState } from "react";
 
 type SizeKey = "14" | "17" | "19";
@@ -20,8 +21,8 @@ const sizes: Record<
     bend: string;
     fit: string;
     n: number;
-    // Product photo in /public; null shows a placeholder until one is added.
-    image: string | null;
+    // Product photo from public/assets; null shows a placeholder until one is added.
+    image: StaticImageData | null;
   }
 > = {
   "14": {
@@ -37,7 +38,7 @@ const sizes: Record<
     bend: "0.3 m / 1 ft",
     fit: "12 mm",
     n: 14,
-    image: "/specification-page-images/14mm.png",
+    image: pipe14mm,
   },
   "17": {
     code: "TP125175",
@@ -52,7 +53,7 @@ const sizes: Record<
     bend: "0.3 m / 1 ft",
     fit: "16 mm",
     n: 17,
-    image: "/specification-page-images/17mm.png"    
+    image: pipe17mm,
   },
   "19": {
     code: "TP125195",
@@ -67,7 +68,7 @@ const sizes: Record<
     bend: "0.4 m / 1.2 ft",
     fit: "16 mm",
     n: 20,
-    image: "/specification-page-images/19mm.png"
+    image: pipe19mm,
   },
 };
 
@@ -97,7 +98,7 @@ export default function SizePicker() {
       <div className="relative mx-auto aspect-square w-full max-w-75 overflow-hidden rounded-r border border-line bg-surface">
         {s.image ? (
           <Image
-            key={s.image}
+            key={key}
             src={s.image}
             alt={`${s.code} ${key} mm pipe, ${s.line.toLowerCase()}`}
             fill

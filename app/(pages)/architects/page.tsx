@@ -1,3 +1,4 @@
+import { architectHero } from "@/public/assets";
 import type { Metadata } from "next";
 import ButtonLink from "../../components/button";
 import CopyClause from "../../components/copy-clause";
@@ -49,7 +50,7 @@ export default function ArchitectsPage() {
         eyebrow="For architects & specifiers"
         title="Specify termite protection that outlasts the treatment."
         lead="A soil treatment is a single event. A Termipore network is a building element with a design life, a fixed specification and test data behind it. It belongs on the drawings."
-        image="/../secondary-hero-images/architect.png"
+        image={architectHero}
       />
 
       <Section>

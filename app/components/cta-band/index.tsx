@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import { ButtonRow } from "../button";
 
 export default function CtaBand({
@@ -7,7 +7,7 @@ export default function CtaBand({
   children,
 }: {
   title: string;
-  image?: string;
+  image?: string | StaticImageData;
   children: React.ReactNode;
 }) {
   return (

@@ -1,4 +1,15 @@
 import Image from "next/image";
+import {
+  architectHome,
+  engineerHome,
+  pestHome,
+  evidenceSpecifierFirst,
+  evidenceSpecifierSecond,
+  evidenceSpecifierThird,
+  evidenceSpecifierFourth,
+  evidenceSpecifierFifth,
+  evidenceSpecifierSixth,
+} from "@/public/assets";
 import Link from "next/link";
 import ButtonLink, { ButtonRow } from "./components/button";
 import ComparisonTable, {
@@ -25,7 +36,7 @@ const audiences = [
     title: "Architects & specifiers",
     text: "Specification clause, size selection, junction box layout and the coordination points to put on your drawings.",
     go: "For architects →",
-    image: "/home-page-images/architect-home.png",
+    image: architectHome,
   },
   {
     href: "/builders",
@@ -33,7 +44,7 @@ const audiences = [
     title: "Construction companies & developers",
     text: "Where Termipore sits in the programme, what site teams must protect, and why buyers value it at handover.",
     go: "For builders →",
-    image: "/home-page-images/engineer-home.png",
+    image: engineerHome,
   },
   {
     href: "/pco",
@@ -41,7 +52,7 @@ const audiences = [
     title: "Pest control companies",
     text: "Pipe range, fitting system, technical data and supply through the authorised distributor.",
     go: "For pest control →",
-    image: "/home-page-images/pest-home.png",
+    image: pestHome,
   },
   {
     href: "/homeowners",
@@ -49,7 +60,6 @@ const audiences = [
     title: "Homeowners",
     text: "What to ask your builder before the floor goes down, and what re-treatment looks like years later.",
     go: "For homeowners →",
-    image: "/home-page-images/homeowner-home.png",
   },
 ];
 
@@ -116,37 +126,37 @@ const evidence: Fact[] = [
     label: "",
     title: "300 hours ≈ 10 years outdoors",
     text: "No cracking, blocking or jetting. Uniform flow on all sides. Tensile strength and elongation reduced by about 10%.",
-    image: "/home-page-images/1.png",
+    image: evidenceSpecifierFirst,
   },
   {
     label: "",
     title: "No slow crack growth",
     text: "Environmental stress-crack resistance tested at 50 °C for 24 hours.",
-    image: "/home-page-images/2.png",
+    image: evidenceSpecifierSecond,
   },
   {
     label: "",
     title: "No banned hazardous substances",
     text: "Compliant with RoHS Annex II and amendment (EU) 2015/863. Test reports on request.",
-    image: "/home-page-images/3.png",
+    image: evidenceSpecifierThird,
   },
   {
     label: "",
     title: "EC and SC formulations",
     text: "Tested with both. Emulsifiable concentrates are preferred for flow.",
-    image: "/home-page-images/4.png",
+    image: evidenceSpecifierFourth,
   },
   {
     label: "",
     title: "ISO 9001:2015",
     text: "Certified process, with flow rate checked on every roll before dispatch.",
-    image: "/home-page-images/5.png",
+    image: evidenceSpecifierFifth,
   },
   {
     label: "",
     title: "QR code on every roll",
     text: "Scan on site to confirm genuine Termipore and reach technical support.",
-    image: "/home-page-images/6.png",
+    image: evidenceSpecifierSixth,
   },
 ];
 

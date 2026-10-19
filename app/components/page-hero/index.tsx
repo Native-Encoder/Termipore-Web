@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 
 export default function PageHero({
   eyebrow,
@@ -10,7 +10,7 @@ export default function PageHero({
   title: string;
   lead?: string;
   /** Decorative background photo, e.g. "/architects-hero.jpg". */
-  image?: string;
+  image?: string | StaticImageData;
 }) {
   return (
     <section
