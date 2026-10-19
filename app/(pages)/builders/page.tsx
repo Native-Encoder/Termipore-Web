@@ -6,6 +6,7 @@ import { TickList } from "../../components/lists";
 import PageHero from "../../components/page-hero";
 import Section, { SectionHead, Split, Stack } from "../../components/section";
 import Steps, { type Step } from "../../components/steps";
+import { constructionFirst, constructionSecond, constructionThird, constructionFourth } from "@/public/assets";
 
 export const metadata: Metadata = {
   title: "For construction companies & developers",
@@ -16,21 +17,25 @@ const sequence: Step[] = [
     label: "01 · Substructure",
     title: "Plinth & PCC complete",
     text: "The installer lays and clamps pipe on the PCC or in soil at plinth level.",
+    image: constructionFirst,
   },
   {
     label: "02 · Protect",
     title: "Cover before screed",
     text: "Sand or paper over the pipe. Wet cement must never touch it.",
+    image: constructionSecond,
   },
   {
     label: "03 · Walls",
     title: "Fix junction boxes",
     text: "Boxes set in the walls at the agreed points, connected with brass fittings.",
+    image: constructionThird,
   },
   {
     label: "04 · Charge",
     title: "Inject and record",
     text: "Termiticide injected through each box before handover, with zones and pipe sizes documented.",
+    image: constructionFourth,
   },
 ];
 
