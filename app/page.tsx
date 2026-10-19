@@ -112,31 +112,37 @@ const evidence: Fact[] = [
     label: "Accelerated weathering",
     title: "300 hours ≈ 10 years outdoors",
     text: "No cracking, blocking or jetting. Uniform flow on all sides. Tensile strength and elongation reduced by about 10%.",
+    image: "/1.png",
   },
   {
     label: "ESCR · Igepal method",
     title: "No slow crack growth",
     text: "Environmental stress-crack resistance tested at 50 °C for 24 hours.",
+    image: "/2.png",
   },
   {
     label: "RoHS · 2011/65/EU",
     title: "No banned hazardous substances",
     text: "Compliant with RoHS Annex II and amendment (EU) 2015/863. Test reports on request.",
+    image: "/3.png",
   },
   {
     label: "Termiticide compatibility",
     title: "EC and SC formulations",
     text: "Tested with both. Emulsifiable concentrates are preferred for flow.",
+    image: "/4.png",
   },
   {
     label: "Manufacturing",
     title: "ISO 9001:2015",
     text: "Certified process, with flow rate checked on every roll before dispatch.",
+    image: "/5.png",
   },
   {
     label: "Authenticity",
     title: "QR code on every roll",
     text: "Scan on site to confirm genuine Termipore and reach technical support.",
+    image: "/6.png",
   },
 ];
 
