@@ -1,3 +1,4 @@
+import { faqHero } from "@/public/assets";
 import type { Metadata } from "next";
 import Link from "next/link";
 import FaqList, { type FaqItem } from "../../components/faq-list";
@@ -55,7 +56,7 @@ export default function FaqPage() {
     <>
       <PageHero eyebrow="FAQ"
         title="Common questions"
-        image="/FAQ.png"
+        image={faqHero}
       />
       <Section narrow>
         <FaqList items={faqs} />

@@ -1,3 +1,4 @@
+import { pestHero, requestCta } from "@/public/assets";
 import type { Metadata } from "next";
 import ButtonLink from "../../components/button";
 import CtaBand from "../../components/cta-band";
@@ -56,7 +57,7 @@ export default function PcoPage() {
         eyebrow="For pest control companies"
         title="The pipe you can warrant."
         lead="Your reputation rides on what happens under the floor after you leave site. Termipore delivers termiticide evenly along the whole run, so the protection you quote is the protection the client gets."
-        image="/pest.png"
+        image={pestHero}
       />
 
       <Section>
@@ -96,7 +97,7 @@ export default function PcoPage() {
         </Split>
       </Section>
 
-      <CtaBand title="Talk to the distributor about supply." image="/request.png">
+      <CtaBand title="Talk to the distributor about supply." image={requestCta}>
         <ButtonLink
           href={{ pathname: "/contact", query: { topic: "Trade supply" } }}
           arrow

@@ -1,4 +1,18 @@
 import Image from "next/image";
+import {
+  architectHome,
+  engineerHome,
+  pestHome,
+  evidenceSpecifierFirst,
+  evidenceSpecifierSecond,
+  evidenceSpecifierThird,
+  evidenceSpecifierFourth,
+  evidenceSpecifierFifth,
+  evidenceSpecifierSixth,
+  homeHero,
+  requestCta,
+  homeOwnersHome
+} from "@/public/assets";
 import Link from "next/link";
 import ButtonLink, { ButtonRow } from "./components/button";
 import ComparisonTable, {
@@ -21,31 +35,35 @@ const stats = [
 const audiences = [
   {
     href: "/architects",
-    tag: "Design stage",
+    tag: "",
     title: "Architects & specifiers",
     text: "Specification clause, size selection, junction box layout and the coordination points to put on your drawings.",
     go: "For architects →",
+    image: architectHome,
   },
   {
     href: "/builders",
-    tag: "Build stage",
+    tag: "",
     title: "Construction companies & developers",
     text: "Where Termipore sits in the programme, what site teams must protect, and why buyers value it at handover.",
     go: "For builders →",
+    image: engineerHome,
   },
   {
     href: "/pco",
-    tag: "Install & maintain",
+    tag: "",
     title: "Pest control companies",
     text: "Pipe range, fitting system, technical data and supply through the authorised distributor.",
     go: "For pest control →",
+    image: pestHome,
   },
   {
     href: "/homeowners",
-    tag: "Your home",
+    tag: "",
     title: "Homeowners",
     text: "What to ask your builder before the floor goes down, and what re-treatment looks like years later.",
     go: "For homeowners →",
+    image: homeOwnersHome,
   },
 ];
 
@@ -109,34 +127,40 @@ const steps: Step[] = [
 
 const evidence: Fact[] = [
   {
-    label: "Accelerated weathering",
+    label: "",
     title: "300 hours ≈ 10 years outdoors",
     text: "No cracking, blocking or jetting. Uniform flow on all sides. Tensile strength and elongation reduced by about 10%.",
+    image: evidenceSpecifierFirst,
   },
   {
-    label: "ESCR · Igepal method",
+    label: "",
     title: "No slow crack growth",
     text: "Environmental stress-crack resistance tested at 50 °C for 24 hours.",
+    image: evidenceSpecifierSecond,
   },
   {
-    label: "RoHS · 2011/65/EU",
+    label: "",
     title: "No banned hazardous substances",
     text: "Compliant with RoHS Annex II and amendment (EU) 2015/863. Test reports on request.",
+    image: evidenceSpecifierThird,
   },
   {
-    label: "Termiticide compatibility",
+    label: "",
     title: "EC and SC formulations",
     text: "Tested with both. Emulsifiable concentrates are preferred for flow.",
+    image: evidenceSpecifierFourth,
   },
   {
-    label: "Manufacturing",
+    label: "",
     title: "ISO 9001:2015",
     text: "Certified process, with flow rate checked on every roll before dispatch.",
+    image: evidenceSpecifierFifth,
   },
   {
-    label: "Authenticity",
+    label: "",
     title: "QR code on every roll",
     text: "Scan on site to confirm genuine Termipore and reach technical support.",
+    image: evidenceSpecifierSixth,
   },
 ];
 
@@ -145,7 +169,7 @@ export default function Home() {
     <>
       <section className="on-blue relative isolate overflow-hidden pt-[clamp(48px,7vw,88px)]">
         <Image
-          src="/home-hero.png"
+          src={homeHero}
           alt=""
           fill
           preload
@@ -212,6 +236,18 @@ export default function Home() {
               href={a.href}
               className="flex flex-col gap-3 border-line px-6 pt-7 pb-6.5 no-underline transition-colors duration-150 hover:bg-surface max-[560px]:not-first:border-t min-[561px]:max-[960px]:even:border-l min-[561px]:max-[960px]:nth-[n+3]:border-t min-[961px]:not-first:border-l"
             >
+              {a.image && (
+                <div className="relative -mx-6 -mt-7 mb-1 aspect-5/4 border-b border-line bg-surface">
+                  <Image
+                    src={a.image}
+                    alt=""
+                    fill
+                    sizes="(min-width: 961px) 25vw, (min-width: 561px) 50vw, 100vw"
+                    quality={100}
+                    className="object-cover"
+                  />
+                </div>
+              )}
               <span className="font-mono text-[0.72rem] tracking-[0.1em] text-muted uppercase">
                 {a.tag}
               </span>
@@ -266,7 +302,7 @@ export default function Home() {
         <FactCards items={evidence} />
       </Section>
 
-      <CtaBand title="Planning a slab pour? Bring Termipore in at design stage." image="/request.png">
+      <CtaBand title="Planning a slab pour? Bring Termipore in at design stage." image={requestCta}>
         <ButtonLink href="/contact" arrow>
           Request a quote
         </ButtonLink>

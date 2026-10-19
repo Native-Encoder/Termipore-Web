@@ -1,3 +1,4 @@
+import { homeOwnersHero, requestCta } from "@/public/assets";
 import type { Metadata } from "next";
 import ButtonLink from "../../components/button";
 import Callout from "../../components/callout";
@@ -21,7 +22,7 @@ export default function HomeownersPage() {
         eyebrow="For homeowners"
         title="Decide before the floor goes down."
         lead="Termipore is installed while your house is being built. Once tiles are laid, the chance has passed. A short conversation with your builder now saves drilling through your floors later."
-        image="/home-owners.png"
+        image={homeOwnersHero}
       />
 
       <Section>
@@ -48,7 +49,7 @@ export default function HomeownersPage() {
         </Split>
       </Section>
 
-      <CtaBand title="Building now? Find an installer near you." image="/request.png">
+      <CtaBand title="Building now? Find an installer near you." image={requestCta}>
         <ButtonLink href="/installers" arrow>
           Certified installers
         </ButtonLink>

@@ -1,3 +1,4 @@
+import { systemHero, requestCta } from "@/public/assets";
 import type { Metadata } from "next";
 import ButtonLink from "../../components/button";
 import ComparisonTable, {
@@ -103,7 +104,7 @@ export default function SystemPage() {
         eyebrow="The system"
         title="A barrier you can recharge without touching the floor."
         lead="Termipore turns termite protection from a one-off soil treatment into part of the building: a sealed pipe network under the slab, served from the wall for the life of the structure."
-        image="/system-hero.png"
+        image={systemHero}
       />
 
       <Section>
@@ -145,7 +146,7 @@ export default function SystemPage() {
         <ComparisonTable rows={comparison} />
       </Section>
 
-      <CtaBand title="See the full technical data." image="/request.png">
+      <CtaBand title="See the full technical data." image={requestCta}>
         <ButtonLink href="/specifications" arrow>
           Specifications
         </ButtonLink>
