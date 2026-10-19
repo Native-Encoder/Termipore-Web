@@ -1,4 +1,11 @@
-import { architectHero, requestCta } from "@/public/assets";
+import {
+  architectHero,
+  architectsFirst,
+  architectsFourth,
+  architectsSecond,
+  architectsThird,
+  requestCta,
+} from "@/public/assets";
 import type { Metadata } from "next";
 import ButtonLink from "../../components/button";
 import CopyClause from "../../components/copy-clause";
@@ -25,21 +32,25 @@ const coordination: Fact[] = [
     label: "Junction box locations",
     title: "Accessible, on internal or external walls",
     text: "Boxes must stay reachable for the life of the building. Avoid locations that will be boxed in by joinery.",
+    image: architectsFirst,
   },
   {
     label: "Pipe runs",
     title: "Perimeter and internal wall lines",
     text: "Show runs and box spacing on the ground floor plan so the installer and contractor work from the same layout.",
+    image: architectsSecond,
   },
   {
     label: "Wet areas",
     title: "Tanking over pipe zones",
     text: "Bathrooms and wash areas need proper tiling and waterproofing. Seepage into the pipe shortens its life.",
+    image: architectsThird,
   },
   {
     label: "Above floor",
     title: "PVC or PE, never Termipore",
     text: "Termipore must not be exposed to air. Any connection above finished floor level is in PVC or PE.",
+    image: architectsFourth,
   },
 ];
 
@@ -72,7 +83,7 @@ export default function ArchitectsPage() {
           eyebrow="Coordination"
           title="Four things to show on the drawings."
         />
-        <FactCards items={coordination} columns={2} />
+        <FactCards items={coordination} columns={2} imagePosition="left" />
       </Section>
 
       <CtaBand title="Get a technical briefing for your practice." image={requestCta}>

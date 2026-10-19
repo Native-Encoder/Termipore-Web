@@ -29,7 +29,7 @@ const list = "m-0 flex list-none flex-col gap-2 p-0";
 
 export default function Footer() {
   return (
-    <footer className="bg-charcoal text-[0.9rem] text-[#CFCAC2]">
+    <footer className="bg-black text-[0.9rem] text-[#CFCAC2]">
       <div className="wrap grid grid-cols-1 gap-8 pt-14 pb-10 *:min-w-0 min-[521px]:grid-cols-2 min-[861px]:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
           <Image
