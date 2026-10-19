@@ -1,4 +1,5 @@
-import { homeOwnersHero, requestCta } from "@/public/assets";
+import Image from "next/image";
+import { homeOwnersFirst, homeOwnersHero, requestCta } from "@/public/assets";
 import type { Metadata } from "next";
 import ButtonLink from "../../components/button";
 import Callout from "../../components/callout";
@@ -35,6 +36,13 @@ export default function HomeownersPage() {
           <Stack>
             <span className="eyebrow">Years later</span>
             <h2>What re-treatment looks like.</h2>
+            <Image
+              src={homeOwnersFirst}
+              alt="Technician injecting termiticide through a wall junction box"
+              sizes="(min-width: 861px) 50vw, 100vw"
+              quality={100}
+              className="h-auto w-full rounded-md"
+            />
             <p>
               A pest control technician arrives with a pump, connects it to the
               junction box on your wall and injects fresh termiticide. It

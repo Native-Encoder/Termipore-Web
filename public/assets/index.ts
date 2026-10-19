@@ -41,3 +41,11 @@ export { default as pestHero } from "./images/secondary-hero/pest.png";
 export { default as pipe14mm } from "./images/specification-page/14mm.png";
 export { default as pipe17mm } from "./images/specification-page/17mm.png";
 export { default as pipe19mm } from "./images/specification-page/19mm.png";
+
+// System page
+export { default as systemDrip } from "./images/system-page/drip.png";
+export { default as systemPVC } from "./images/system-page/pvc.png";
+export { default as systemTermi } from "./images/system-page/termi.png";
+
+// Home Owners page
+export { default as homeOwnersFirst } from "./images/homeowners-page/web images.png";

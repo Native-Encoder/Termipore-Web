@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { systemHero, requestCta } from "@/public/assets";
 import type { Metadata } from "next";
 import ButtonLink from "../../components/button";
@@ -9,6 +10,7 @@ import FactCards, { type Fact } from "../../components/fact-cards";
 import { NumberedList } from "../../components/lists";
 import PageHero from "../../components/page-hero";
 import Section, { SectionHead, Split, Stack } from "../../components/section";
+import { systemDrip, systemPVC, systemTermi } from "@/public/assets";
 
 export const metadata: Metadata = { title: "The system" };
 
@@ -33,20 +35,23 @@ const ratings = [
 
 const failures: Fact[] = [
   {
-    label: "Drip-irrigation line",
+    label: "",
     title: "Built for farms",
     text: "Three to four holes per metre, all on one side. They clog within a few years, and a buried section can't be dug up and replaced the way a farmer would in a field.",
+    image: systemDrip,
   },
   {
-    label: "Hand-drilled PVC",
+    label: "",
     title: "Holes too large, too uneven",
     text: "Fine, uniform holes can't be drilled by hand. Most of the flow leaves near the inlet, so the far end of the run gets little or nothing.",
+    image: systemPVC,
   },
   {
-    label: "Termipore",
+    label: "",
     title: "Honeycomb elastomeric wall",
     text: "40–100 micro-holes per metre around the full circumference, depending on size. They open under pump pressure and close after, so they resist blocking.",
     highlight: true,
+    image: systemTermi,
   },
 ];
 
