@@ -1,4 +1,4 @@
-import { systemHero } from "@/public/assets";
+import { systemHero, requestCta } from "@/public/assets";
 import type { Metadata } from "next";
 import ButtonLink from "../../components/button";
 import ComparisonTable, {
@@ -146,7 +146,7 @@ export default function SystemPage() {
         <ComparisonTable rows={comparison} />
       </Section>
 
-      <CtaBand title="See the full technical data." image="/request.png">
+      <CtaBand title="See the full technical data." image={requestCta}>
         <ButtonLink href="/specifications" arrow>
           Specifications
         </ButtonLink>

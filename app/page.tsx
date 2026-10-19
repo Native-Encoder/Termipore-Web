@@ -9,6 +9,9 @@ import {
   evidenceSpecifierFourth,
   evidenceSpecifierFifth,
   evidenceSpecifierSixth,
+  homeHero,
+  requestCta,
+  homeOwnersHome
 } from "@/public/assets";
 import Link from "next/link";
 import ButtonLink, { ButtonRow } from "./components/button";
@@ -60,6 +63,7 @@ const audiences = [
     title: "Homeowners",
     text: "What to ask your builder before the floor goes down, and what re-treatment looks like years later.",
     go: "For homeowners →",
+    image: homeOwnersHome,
   },
 ];
 
@@ -165,7 +169,7 @@ export default function Home() {
     <>
       <section className="on-blue relative isolate overflow-hidden pt-[clamp(48px,7vw,88px)]">
         <Image
-          src="/home-hero.png"
+          src={homeHero}
           alt=""
           fill
           preload
@@ -298,7 +302,7 @@ export default function Home() {
         <FactCards items={evidence} />
       </Section>
 
-      <CtaBand title="Planning a slab pour? Bring Termipore in at design stage." image="/request.png">
+      <CtaBand title="Planning a slab pour? Bring Termipore in at design stage." image={requestCta}>
         <ButtonLink href="/contact" arrow>
           Request a quote
         </ButtonLink>

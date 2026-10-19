@@ -1,4 +1,4 @@
-import { architectHero } from "@/public/assets";
+import { architectHero, requestCta } from "@/public/assets";
 import type { Metadata } from "next";
 import ButtonLink from "../../components/button";
 import CopyClause from "../../components/copy-clause";
@@ -75,7 +75,7 @@ export default function ArchitectsPage() {
         <FactCards items={coordination} columns={2} />
       </Section>
 
-      <CtaBand title="Get a technical briefing for your practice." image="/request.png">
+      <CtaBand title="Get a technical briefing for your practice." image={requestCta}>
         <ButtonLink
           href={{ pathname: "/contact", query: { topic: "Technical briefing" } }}
           arrow

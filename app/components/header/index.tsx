@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Image from "next/image";
+import { logo } from "@/public/assets";
 
 const mainLinks = [
   { href: "/system", label: "The system" },
@@ -34,7 +35,7 @@ export default function Header() {
           className="flex items-center no-underline"
         >
           <Image
-            src="/logo.png"
+            src={logo}
             alt="Termipore"
             width={2169}
             height={725}

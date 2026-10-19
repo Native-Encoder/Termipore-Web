@@ -9,7 +9,7 @@ export default function PageHero({
   eyebrow: string;
   title: string;
   lead?: string;
-  /** Decorative background photo, e.g. "/architects-hero.jpg". */
+  /** Decorative background photo, e.g. an import from "@/public/assets". */
   image?: string | StaticImageData;
 }) {
   return (

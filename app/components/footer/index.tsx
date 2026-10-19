@@ -1,3 +1,4 @@
+import { logoFooter } from "@/public/assets";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -32,7 +33,7 @@ export default function Footer() {
       <div className="wrap grid grid-cols-1 gap-8 pt-14 pb-10 *:min-w-0 min-[521px]:grid-cols-2 min-[861px]:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
           <Image
-            src="/logo-footer.png"
+            src={logoFooter}
             alt="Termipore"
             width={917}
             height={248}

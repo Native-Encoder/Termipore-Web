@@ -1,4 +1,4 @@
-import { specificationsHero } from "@/public/assets";
+import { specificationsHero, requestCta } from "@/public/assets";
 import type { Metadata } from "next";
 import ButtonLink from "../../components/button";
 import CtaBand from "../../components/cta-band";
@@ -203,7 +203,7 @@ export default function SpecsPage() {
         </Split>
       </Section>
 
-      <CtaBand title="Need the TDS, test reports or a sample roll?" image="/request.png">
+      <CtaBand title="Need the TDS, test reports or a sample roll?" image={requestCta}>
         <ButtonLink href={{ pathname: "/contact", query: { topic: "TDS / test reports" } }} arrow>
           Request documents
         </ButtonLink>
