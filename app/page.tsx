@@ -21,7 +21,7 @@ const stats = [
 const audiences = [
   {
     href: "/architects",
-    tag: "Design stage",
+    tag: "",
     title: "Architects & specifiers",
     text: "Specification clause, size selection, junction box layout and the coordination points to put on your drawings.",
     go: "For architects →",
@@ -29,24 +29,27 @@ const audiences = [
   },
   {
     href: "/builders",
-    tag: "Build stage",
+    tag: "",
     title: "Construction companies & developers",
     text: "Where Termipore sits in the programme, what site teams must protect, and why buyers value it at handover.",
     go: "For builders →",
+    image: "/home-page-images/engineer-home.png",
   },
   {
     href: "/pco",
-    tag: "Install & maintain",
+    tag: "",
     title: "Pest control companies",
     text: "Pipe range, fitting system, technical data and supply through the authorised distributor.",
     go: "For pest control →",
+    image: "/home-page-images/pest-home.png",
   },
   {
     href: "/homeowners",
-    tag: "Your home",
+    tag: "",
     title: "Homeowners",
     text: "What to ask your builder before the floor goes down, and what re-treatment looks like years later.",
     go: "For homeowners →",
+    image: "/home-page-images/homeowner-home.png",
   },
 ];
 
