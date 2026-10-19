@@ -63,3 +63,9 @@ export { default as constructionFirst } from "./images/construction-page/constru
 export { default as constructionSecond } from "./images/construction-page/construction-second.png";
 export { default as constructionThird } from "./images/construction-page/construction-third.png";
 export { default as constructionFourth } from "./images/construction-page/construction-fourth.png";
+
+// Architects Page
+export { default as architectsFirst } from "./images/architects-page/architects-first.png";
+export { default as architectsSecond } from "./images/architects-page/architects-second.png";
+export { default as architectsThird } from "./images/architects-page/architects-third.png";
+export { default as architectsFourth } from "./images/architects-page/architects-fourth.png";
