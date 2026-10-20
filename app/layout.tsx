@@ -4,6 +4,36 @@ import Footer from './components/footer';
 import Header from './components/header';
 import './globals.css';
 import { WhatsappButton } from './components/icons';
+import ImageWarmup from './components/image-warmup';
+import {
+  homeHero,
+  architectHero,
+  engineerHero,
+  pestHero,
+  homeOwnersHero,
+  systemHero,
+  specificationsHero,
+  installersHero,
+  faqHero,
+  contactHero,
+  requestCta,
+} from '@/public/assets';
+
+// Full-width photos fetched in the background so page switches show them
+// instantly. Keep in sync with the `image` passed to PageHero on each page.
+const warmupImages = [
+  homeHero,
+  architectHero,
+  engineerHero,
+  pestHero,
+  homeOwnersHero,
+  systemHero,
+  specificationsHero,
+  installersHero,
+  faqHero,
+  contactHero,
+  requestCta,
+];
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -34,6 +64,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         <main>{children}</main>
         <Footer />
         <WhatsappButton />
+        <ImageWarmup images={warmupImages} />
       </body>
     </html>
   );
