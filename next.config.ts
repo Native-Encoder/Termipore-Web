@@ -9,7 +9,11 @@ const nextConfig: NextConfig = {
   partialPrefetching: true,
   images: {
     qualities: [75],
-    formats: ['image/avif', 'image/webp'],
+    // WebP only: sources are already WebP, and on-demand AVIF encoding adds
+    // ~1s to each image's first request.
+    formats: ['image/webp'],
+    // Static imports are content-hashed, so optimized results can live long.
+    minimumCacheTTL: 31536000,
   },
 };
 
