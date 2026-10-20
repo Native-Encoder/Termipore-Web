@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 import {
   architectHome,
   engineerHome,
@@ -11,155 +11,159 @@ import {
   thirdImage,
   fourthImage,
   fifthImage,
-  sixthImage
-} from "@/public/assets";
-import Link from "next/link";
-import ButtonLink, { ButtonRow } from "./components/button";
+  sixthImage,
+} from '@/public/assets';
+import Link from 'next/link';
+import ButtonLink, { ButtonRow } from './components/button';
 import ComparisonTable, {
   type ComparisonRow,
-} from "./components/comparison-table";
-import CountUp from "./components/count-up";
-import CtaBand from "./components/cta-band";
-import FactCards, { type Fact } from "./components/fact-cards";
-import HeroDiagram from "./components/hero-diagram";
-import Section, { SectionHead, Split, Stack } from "./components/section";
-import Steps, { type Step } from "./components/steps";
+} from './components/comparison-table';
+import CountUp from './components/count-up';
+import CtaBand from './components/cta-band';
+import FactCards, { type Fact } from './components/fact-cards';
+import HeroDiagram from './components/hero-diagram';
+import Section, { SectionHead, Split, Stack } from './components/section';
+import Steps, { type Step } from './components/steps';
 
 const stats = [
-  { value: "150+", label: "installations in Sri Lanka" },
-  { value: "10,000+", label: "installations worldwide" },
-  { value: "30–50 yrs", label: "working life when concealed" },
-  { value: "ISO 9001", label: ":2015 certified manufacturing", static: true },
+  { value: '150+', label: 'installations in Sri Lanka' },
+  { value: '10,000+', label: 'installations worldwide' },
+  { value: '30–50 yrs', label: 'working life when concealed' },
+  { value: 'ISO 9001', label: ':2015 certified manufacturing', static: true },
 ];
 
 const audiences = [
   {
-    href: "/architects",
-    tag: "",
-    title: "Architects & specifiers",
-    text: "Specification clause, size selection, junction box layout and the coordination points to put on your drawings.",
-    go: "For architects →",
+    href: '/architects',
+    tag: '',
+    title: 'Architects & specifiers',
+    text: 'Specification clause, size selection, junction box layout and the coordination points to put on your drawings.',
+    go: 'For architects →',
     image: architectHome,
   },
   {
-    href: "/builders",
-    tag: "",
-    title: "Construction companies & developers",
-    text: "Where Termipore sits in the programme, what site teams must protect, and why buyers value it at handover.",
-    go: "For builders →",
+    href: '/builders',
+    tag: '',
+    title: 'Construction companies & developers',
+    text: 'Where Termipore sits in the programme, what site teams must protect, and why buyers value it at handover.',
+    go: 'For builders →',
     image: engineerHome,
   },
   {
-    href: "/pco",
-    tag: "",
-    title: "Pest control companies",
-    text: "Pipe range, fitting system, technical data and supply through the authorised distributor.",
-    go: "For pest control →",
+    href: '/pco',
+    tag: '',
+    title: 'Pest control companies',
+    text: 'Pipe range, fitting system, technical data and supply through the authorised distributor.',
+    go: 'For pest control →',
     image: pestHome,
   },
   {
-    href: "/homeowners",
-    tag: "",
-    title: "Homeowners",
-    text: "What to ask your builder before the floor goes down, and what re-treatment looks like years later.",
-    go: "For homeowners →",
+    href: '/homeowners',
+    tag: '',
+    title: 'Homeowners',
+    text: 'What to ask your builder before the floor goes down, and what re-treatment looks like years later.',
+    go: 'For homeowners →',
     image: homeOwnersHome,
   },
 ];
 
 const comparison: ComparisonRow[] = [
   {
-    label: "Purpose-built for termite control",
-    cells: ["Yes", ["No", "nope"], ["—", "dim"]],
+    label: 'Purpose-built for termite control',
+    cells: ['Yes', ['No', 'nope'], ['—', 'dim']],
   },
   {
-    label: "Holes per metre",
-    cells: [["40–100", "mono"], ["3–4", "mono", "nope"], ["—", "dim"]],
-  },
-  {
-    label: "Holes around full circumference",
-    cells: ["Yes", ["One side", "nope"], ["—", "dim"]],
-  },
-  {
-    label: "Resists blocking by sand or mud",
-    cells: ["Yes", ["No", "nope"], ["—", "dim"]],
-  },
-  {
-    label: "Flow checked on every roll",
-    cells: ["Yes", ["No", "nope"], ["—", "dim"]],
-  },
-  {
-    label: "Re-treat without drilling floors",
-    cells: ["Yes", "Yes", ["No", "nope"]],
-  },
-  {
-    label: "Design life",
+    label: 'Holes per metre',
     cells: [
-      ["30–50 yrs", "mono"],
-      ["Unreliable", "nope"],
-      ["None", "nope"],
+      ['40–100', 'mono'],
+      ['3–4', 'mono', 'nope'],
+      ['—', 'dim'],
+    ],
+  },
+  {
+    label: 'Holes around full circumference',
+    cells: ['Yes', ['One side', 'nope'], ['—', 'dim']],
+  },
+  {
+    label: 'Resists blocking by sand or mud',
+    cells: ['Yes', ['No', 'nope'], ['—', 'dim']],
+  },
+  {
+    label: 'Flow checked on every roll',
+    cells: ['Yes', ['No', 'nope'], ['—', 'dim']],
+  },
+  {
+    label: 'Re-treat without drilling floors',
+    cells: ['Yes', 'Yes', ['No', 'nope']],
+  },
+  {
+    label: 'Design life',
+    cells: [
+      ['30–50 yrs', 'mono'],
+      ['Unreliable', 'nope'],
+      ['None', 'nope'],
     ],
   },
 ];
 
 const steps: Step[] = [
   {
-    label: "01 · Before the floor",
-    title: "Lay the network",
-    text: "Pipe is run on the PCC or in soil at plinth level, around the perimeter and under internal walls, fixed with clamps.",
+    label: '01 · Before the floor',
+    title: 'Lay the network',
+    text: 'Pipe is run on the PCC or in soil at plinth level, around the perimeter and under internal walls, fixed with clamps.',
   },
   {
-    label: "02 · Connect",
-    title: "Terminate at junction boxes",
-    text: "Runs end in wall-mounted boxes, spaced to suit the pump. Floor finishes go down over a sealed network.",
+    label: '02 · Connect',
+    title: 'Terminate at junction boxes',
+    text: 'Runs end in wall-mounted boxes, spaced to suit the pump. Floor finishes go down over a sealed network.',
   },
   {
-    label: "03 · Inject",
-    title: "Charge the barrier",
-    text: "Termiticide is pumped through the boxes and spreads from the micro-holes into the soil beneath the slab.",
+    label: '03 · Inject',
+    title: 'Charge the barrier',
+    text: 'Termiticide is pumped through the boxes and spreads from the micro-holes into the soil beneath the slab.',
   },
   {
-    label: "04 · Years later",
-    title: "Re-treat from the wall",
-    text: "The barrier is topped up through the same boxes. No drilling, no lifted tiles, no disruption to occupants.",
+    label: '04 · Years later',
+    title: 'Re-treat from the wall',
+    text: 'The barrier is topped up through the same boxes. No drilling, no lifted tiles, no disruption to occupants.',
   },
 ];
 
 const evidence: Fact[] = [
   {
-    label: "",
-    title: "300 hours ≈ 10 years outdoors",
-    text: "No cracking, blocking or jetting. Uniform flow on all sides. Tensile strength and elongation reduced by about 10%.",
+    label: '',
+    title: '300 hours ≈ 10 years outdoors',
+    text: 'No cracking, blocking or jetting. Uniform flow on all sides. Tensile strength and elongation reduced by about 10%.',
     image: firstImage,
   },
   {
-    label: "",
-    title: "No slow crack growth",
-    text: "Environmental stress-crack resistance tested at 50 °C for 24 hours.",
+    label: '',
+    title: 'No slow crack growth',
+    text: 'Environmental stress-crack resistance tested at 50 °C for 24 hours.',
     image: secondImage,
   },
   {
-    label: "",
-    title: "No banned hazardous substances",
-    text: "Compliant with RoHS Annex II and amendment (EU) 2015/863. Test reports on request.",
+    label: '',
+    title: 'No banned hazardous substances',
+    text: 'Compliant with RoHS Annex II and amendment (EU) 2015/863. Test reports on request.',
     image: thirdImage,
   },
   {
-    label: "",
-    title: "EC and SC formulations",
-    text: "Tested with both. Emulsifiable concentrates are preferred for flow.",
+    label: '',
+    title: 'EC and SC formulations',
+    text: 'Tested with both. Emulsifiable concentrates are preferred for flow.',
     image: fourthImage,
   },
   {
-    label: "",
-    title: "ISO 9001:2015",
-    text: "Certified process, with flow rate checked on every roll before dispatch.",
+    label: '',
+    title: 'ISO 9001:2015',
+    text: 'Certified process, with flow rate checked on every roll before dispatch.',
     image: fifthImage,
   },
   {
-    label: "",
-    title: "QR code on every roll",
-    text: "Scan on site to confirm genuine Termipore and reach technical support.",
+    label: '',
+    title: 'QR code on every roll',
+    text: 'Scan on site to confirm genuine Termipore and reach technical support.',
     image: sixthImage,
   },
 ];
@@ -214,7 +218,11 @@ export default function Home() {
                 className="border-l border-white/18 px-5 pt-5.5 pb-6.5 first:border-l-0 first:pl-0 max-[860px]:nth-[3]:border-l-0 max-[860px]:nth-[3]:pl-0 max-[860px]:nth-[n+3]:border-t"
               >
                 <b className="block font-sans text-[clamp(1.6rem,3vw,2.2rem)] leading-[1.1] font-extrabold text-white tabular-nums">
-                  {"static" in stat ? stat.value : <CountUp value={stat.value} />}
+                  {'static' in stat ? (
+                    stat.value
+                  ) : (
+                    <CountUp value={stat.value} />
+                  )}
                 </b>
                 <span className="text-[0.82rem] text-on-blue-muted">
                   {stat.label}
@@ -278,7 +286,12 @@ export default function Home() {
               pressure and close again, so sand and mud don&apos;t plug them.
               Flow is checked on every roll.
             </p>
-            <ButtonLink href="/system" variant="ghost" arrow className="self-start">
+            <ButtonLink
+              href="/system"
+              variant="ghost"
+              arrow
+              className="self-start"
+            >
               How the system works
             </ButtonLink>
           </Stack>
@@ -302,7 +315,10 @@ export default function Home() {
         <FactCards items={evidence} />
       </Section>
 
-      <CtaBand title="Planning a slab pour? Bring Termipore in at design stage." image={requestCta}>
+      <CtaBand
+        title="Planning a slab pour? Bring Termipore in at design stage."
+        image={requestCta}
+      >
         <ButtonLink href="/contact" arrow>
           Request a quote
         </ButtonLink>

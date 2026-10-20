@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Brand tokens. Light by default, dark via system preference or data-theme. */
 :root {
@@ -22,7 +22,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+  :root:not([data-theme='light']) {
     --bg: #14151e;
     --surface: #1b1d29;
     --band: #20222f;
@@ -41,7 +41,7 @@
   }
 }
 
-:root[data-theme="dark"] {
+:root[data-theme='dark'] {
   --bg: #14151e;
   --surface: #1b1d29;
   --band: #20222f;
@@ -84,7 +84,7 @@
   --color-pipe-red: #d2342c;
 
   --font-sans:
-    var(--font-poppins), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    var(--font-poppins), ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
     sans-serif;
   --font-mono:
     var(--font-plex-mono), ui-monospace, SFMono-Regular, Menlo, Consolas,
@@ -226,16 +226,16 @@
   display: none;
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .logo-light {
+  :root:not([data-theme='light']) .logo-light {
     display: none;
   }
-  :root:not([data-theme="light"]) .logo-dark {
+  :root:not([data-theme='light']) .logo-dark {
     display: block;
   }
 }
-:root[data-theme="dark"] .logo-light {
+:root[data-theme='dark'] .logo-light {
   display: none;
 }
-:root[data-theme="dark"] .logo-dark {
+:root[data-theme='dark'] .logo-dark {
   display: block;
 }

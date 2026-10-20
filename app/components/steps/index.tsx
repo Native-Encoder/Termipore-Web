@@ -1,4 +1,4 @@
-import Image, { type StaticImageData } from "next/image";
+import Image, { type StaticImageData } from 'next/image';
 
 export type Step = {
   label: string;
@@ -13,7 +13,7 @@ export default function Steps({ items }: { items: Step[] }) {
       {items.map((step, i) => (
         <div
           key={step.title}
-          className={`flex flex-col gap-2.5 border-t-3 pt-5 ${i === 0 ? "border-accent" : "border-line"}`}
+          className={`flex flex-col gap-2.5 border-t-3 pt-5 ${i === 0 ? 'border-accent' : 'border-line'}`}
         >
           {step.image && (
             <div className="relative mb-1 aspect-5/4 overflow-hidden rounded-r border border-line bg-surface">
