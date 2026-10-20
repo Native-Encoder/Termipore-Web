@@ -1,23 +1,22 @@
-import { installersHero } from "@/public/assets";
-import type { Metadata } from "next";
-import Link from "next/link";
-import Callout from "../../components/callout";
-import PageHero from "../../components/page-hero";
-import Section from "../../components/section";
+import { installersHero } from '@/public/assets';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import Callout from '../../components/callout';
+import PageHero from '../../components/page-hero';
+import Section from '../../components/section';
 
-export const metadata: Metadata = { title: "Certified installers" };
+export const metadata: Metadata = { title: 'Certified installers' };
 
 const installers = [
-  "CNE Pest Control",
-  "Manulas Pest Control and Fumigation",
-  "Termite.com",
-  "A1 Pest Control",
+  'CNE Pest Control',
+  'Manulas Pest Control and Fumigation',
+  'Termite.com',
+  'A1 Pest Control',
 ];
 
-const card =
-  "flex flex-col gap-3 rounded-r border border-line bg-bg p-6";
+const card = 'flex flex-col gap-3 rounded-r border border-line bg-bg p-6';
 const badge =
-  "self-start rounded-[3px] px-2.25 py-1 font-mono text-[0.7rem] tracking-[0.08em] uppercase";
+  'self-start rounded-[3px] px-2.25 py-1 font-mono text-[0.7rem] tracking-[0.08em] uppercase';
 
 export default function InstallersPage() {
   return (

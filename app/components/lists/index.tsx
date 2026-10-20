@@ -3,7 +3,7 @@ export type Tick = { title: string; text: string };
 /** Diamond-bulleted list: bold lead-in followed by muted detail. */
 export function TickList({
   items,
-  separator = " ",
+  separator = ' ',
 }: {
   items: Tick[];
   separator?: string;

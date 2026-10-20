@@ -1,7 +1,7 @@
 export default function Callout({
   title,
   text,
-  className = "",
+  className = '',
 }: {
   title: string;
   text: string;

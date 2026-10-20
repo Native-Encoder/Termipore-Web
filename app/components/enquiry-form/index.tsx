@@ -1,46 +1,47 @@
-"use client";
+'use client';
 
-import { useSearchParams } from "next/navigation";
-import { useRef, useState, type FormEvent } from "react";
+import { useSearchParams } from 'next/navigation';
+import { useRef, useState, type FormEvent } from 'react';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3500/api";
-const GENERIC_ERROR = "Something went wrong. Please try again or call 0777 367 719.";
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:3500/api';
+const GENERIC_ERROR =
+  'Something went wrong. Please try again or call 0777 367 719.';
 
 // `value` is sent to the API as-is and appears in the emails, so keep it human-readable.
 const roles = [
-  { value: "Architect / specifier", label: "An architect / specifier" },
-  { value: "Construction company", label: "A construction company" },
-  { value: "Developer", label: "A developer" },
-  { value: "Pest control company", label: "A pest control company" },
-  { value: "Homeowner", label: "A homeowner" },
+  { value: 'Architect / specifier', label: 'An architect / specifier' },
+  { value: 'Construction company', label: 'A construction company' },
+  { value: 'Developer', label: 'A developer' },
+  { value: 'Pest control company', label: 'A pest control company' },
+  { value: 'Homeowner', label: 'A homeowner' },
 ];
 
 const topics = [
-  "Project quote",
-  "TDS / test reports",
-  "Technical briefing",
-  "Site visit",
-  "Trade supply",
-  "Something else",
+  'Project quote',
+  'TDS / test reports',
+  'Technical briefing',
+  'Site visit',
+  'Trade supply',
+  'Something else',
 ];
 
 const stages = [
-  "Design",
-  "Before PCC / slab",
-  "Under construction",
-  "Completed building",
+  'Design',
+  'Before PCC / slab',
+  'Under construction',
+  'Completed building',
 ];
 
 type Key =
-  | "role"
-  | "name"
-  | "company"
-  | "phone"
-  | "email"
-  | "need"
-  | "projectStage"
-  | "location"
-  | "details";
+  | 'role'
+  | 'name'
+  | 'company'
+  | 'phone'
+  | 'email'
+  | 'need'
+  | 'projectStage'
+  | 'location'
+  | 'details';
 
 // Mirrors the API's validation rules so most mistakes are caught before sending.
 const rules: Record<Key, { required?: boolean; max: number }> = {
@@ -60,23 +61,27 @@ const phonePattern = /^\+?[\d\s()-]{7,20}$/;
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 type Errors = Partial<Record<Key, string>>;
-type Sent = { firstName: string; reference: string; customerEmailSent: boolean };
+type Sent = {
+  firstName: string;
+  reference: string;
+  customerEmailSent: boolean;
+};
 
 function validate(body: Partial<Record<Key, string>>): Errors {
   const errors: Errors = {};
   for (const key of keys) {
     const value = body[key];
     if (!value) {
-      if (rules[key].required) errors[key] = "This field is required.";
+      if (rules[key].required) errors[key] = 'This field is required.';
     } else if (value.length > rules[key].max) {
       errors[key] = `Keep this under ${rules[key].max} characters.`;
     }
   }
   if (!errors.phone && body.phone && !phonePattern.test(body.phone)) {
-    errors.phone = "Enter a valid phone number, e.g. 077 123 4567.";
+    errors.phone = 'Enter a valid phone number, e.g. 077 123 4567.';
   }
   if (!errors.email && body.email && !emailPattern.test(body.email)) {
-    errors.email = "Enter a valid email address.";
+    errors.email = 'Enter a valid email address.';
   }
   return errors;
 }
@@ -88,10 +93,10 @@ function serverErrors(messages: unknown): { fields: Errors; other: string[] } {
   const other: string[] = [];
   const list = Array.isArray(messages) ? messages : [messages];
   for (const message of list) {
-    if (typeof message !== "string") continue;
-    const key = message.split(" ")[0] as Key;
+    if (typeof message !== 'string') continue;
+    const key = message.split(' ')[0] as Key;
     if (keys.includes(key)) {
-      fields[key] ??= message.charAt(0).toUpperCase() + message.slice(1) + ".";
+      fields[key] ??= message.charAt(0).toUpperCase() + message.slice(1) + '.';
     } else {
       other.push(message);
     }
@@ -99,10 +104,10 @@ function serverErrors(messages: unknown): { fields: Errors; other: string[] } {
   return { fields, other };
 }
 
-const field = "flex min-w-0 flex-col gap-1.5";
-const label = "text-[0.85rem] font-semibold";
+const field = 'flex min-w-0 flex-col gap-1.5';
+const label = 'text-[0.85rem] font-semibold';
 const control =
-  "w-full rounded-r border-[1.5px] border-line bg-bg px-3.5 py-3 text-[0.95rem] text-fg focus:border-brand focus:outline-none aria-invalid:border-no";
+  'w-full rounded-r border-[1.5px] border-line bg-bg px-3.5 py-3 text-[0.95rem] text-fg focus:border-brand focus:outline-none aria-invalid:border-no';
 
 function FieldError({ id, message }: { id: string; message?: string }) {
   if (!message) return null;
@@ -115,12 +120,12 @@ function FieldError({ id, message }: { id: string; message?: string }) {
 
 export default function EnquiryForm() {
   // CTAs link here with ?topic=… to preselect what the visitor needs.
-  const requested = useSearchParams().get("topic");
+  const requested = useSearchParams().get('topic');
   const defaultTopic =
     requested && topics.includes(requested) ? requested : topics[0];
 
   const [errors, setErrors] = useState<Errors>({});
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState<Sent | null>(null);
   // Guards against a double click firing before the disabled state renders.
@@ -134,24 +139,24 @@ export default function EnquiryForm() {
     // Only send filled-in fields; the API rejects unknown keys.
     const body: Partial<Record<Key, string>> = {};
     for (const key of keys) {
-      const value = String(data.get(key) ?? "").trim();
+      const value = String(data.get(key) ?? '').trim();
       if (value) body[key] = value;
     }
 
     const invalid = validate(body);
     setErrors(invalid);
     if (Object.keys(invalid).length > 0) {
-      setError("Please check the highlighted fields.");
+      setError('Please check the highlighted fields.');
       return;
     }
 
-    setError("");
+    setError('');
     setSending(true);
     inFlight.current = true;
     try {
       const res = await fetch(`${API_URL}/enquiries`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       });
       const json = await res.json().catch(() => null);
@@ -166,11 +171,13 @@ export default function EnquiryForm() {
         const { fields, other } = serverErrors(json?.message);
         setErrors(fields);
         setError(
-          other.length > 0 ? other.join(" ") : "Please check the highlighted fields.",
+          other.length > 0
+            ? other.join(' ')
+            : 'Please check the highlighted fields.',
         );
       } else if (res.status === 429) {
-        setError("Too many attempts, please wait a minute and try again.");
-      } else if (res.status === 503 && typeof json?.message === "string") {
+        setError('Too many attempts, please wait a minute and try again.');
+      } else if (res.status === 503 && typeof json?.message === 'string') {
         setError(json.message);
       } else {
         setError(GENERIC_ERROR);
@@ -191,7 +198,7 @@ export default function EnquiryForm() {
       >
         <b className="font-sans text-head">Thank you, {sent.firstName}.</b>
         <p className="mt-1.5 text-muted">
-          Your reference is{" "}
+          Your reference is{' '}
           <b className="font-mono text-fg select-all">{sent.reference}</b>.
           We&apos;ll get back to you within one working day.
         </p>
@@ -207,9 +214,7 @@ export default function EnquiryForm() {
 
   // Wires a control to its error message for styling and screen readers.
   const describe = (key: Key) =>
-    errors[key]
-      ? { "aria-invalid": true, "aria-describedby": `e-${key}` }
-      : {};
+    errors[key] ? { 'aria-invalid': true, 'aria-describedby': `e-${key}` } : {};
 
   return (
     <form
@@ -219,7 +224,11 @@ export default function EnquiryForm() {
     >
       <div className={`${field} col-span-full`}>
         <span className={label}>I am</span>
-        <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="I am">
+        <div
+          className="flex flex-wrap gap-2"
+          role="radiogroup"
+          aria-label="I am"
+        >
           {roles.map((role, i) => (
             <span key={role.value}>
               <input
@@ -253,7 +262,7 @@ export default function EnquiryForm() {
           autoComplete="name"
           maxLength={rules.name.max}
           required
-          {...describe("name")}
+          {...describe('name')}
         />
         <FieldError id="e-name" message={errors.name} />
       </div>
@@ -267,7 +276,7 @@ export default function EnquiryForm() {
           name="company"
           autoComplete="organization"
           maxLength={rules.company.max}
-          {...describe("company")}
+          {...describe('company')}
         />
         <FieldError id="e-company" message={errors.company} />
       </div>
@@ -283,7 +292,7 @@ export default function EnquiryForm() {
           autoComplete="tel"
           maxLength={rules.phone.max}
           required
-          {...describe("phone")}
+          {...describe('phone')}
         />
         <FieldError id="e-phone" message={errors.phone} />
       </div>
@@ -299,7 +308,7 @@ export default function EnquiryForm() {
           autoComplete="email"
           maxLength={rules.email.max}
           required
-          {...describe("email")}
+          {...describe('email')}
         />
         <FieldError id="e-email" message={errors.email} />
       </div>
@@ -312,7 +321,7 @@ export default function EnquiryForm() {
           id="f-topic"
           name="need"
           defaultValue={defaultTopic}
-          {...describe("need")}
+          {...describe('need')}
         >
           {topics.map((t) => (
             <option key={t}>{t}</option>
@@ -329,7 +338,7 @@ export default function EnquiryForm() {
           id="f-stage"
           name="projectStage"
           defaultValue=""
-          {...describe("projectStage")}
+          {...describe('projectStage')}
         >
           <option value="">Not sure yet</option>
           {stages.map((s) => (
@@ -348,7 +357,7 @@ export default function EnquiryForm() {
           name="location"
           placeholder="e.g. Gampaha"
           maxLength={rules.location.max}
-          {...describe("location")}
+          {...describe('location')}
         />
         <FieldError id="e-location" message={errors.location} />
       </div>
@@ -362,7 +371,7 @@ export default function EnquiryForm() {
           name="details"
           placeholder="Building type, approximate ground-floor area, timeline"
           maxLength={rules.details.max}
-          {...describe("details")}
+          {...describe('details')}
         />
         <FieldError id="e-details" message={errors.details} />
       </div>
@@ -374,7 +383,7 @@ export default function EnquiryForm() {
           aria-busy={sending}
         >
           {sending ? (
-            "Sending…"
+            'Sending…'
           ) : (
             <>
               Send enquiry <span className="arr">→</span>

@@ -1,4 +1,4 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -8,7 +8,12 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   images: {
-    qualities: [75, 100],
+    qualities: [75],
+    // WebP only: sources are already WebP, and on-demand AVIF encoding adds
+    // ~1s to each image's first request.
+    formats: ['image/webp'],
+    // Static imports are content-hashed, so optimized results can live long.
+    minimumCacheTTL: 31536000,
   },
 };
 

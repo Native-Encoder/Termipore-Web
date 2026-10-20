@@ -5,16 +5,16 @@ import {
   architectsSecond,
   architectsThird,
   requestCta,
-} from "@/public/assets";
-import type { Metadata } from "next";
-import ButtonLink from "../../components/button";
-import CopyClause from "../../components/copy-clause";
-import CtaBand from "../../components/cta-band";
-import FactCards, { type Fact } from "../../components/fact-cards";
-import PageHero from "../../components/page-hero";
-import Section, { SectionHead, Split, Stack } from "../../components/section";
+} from '@/public/assets';
+import type { Metadata } from 'next';
+import ButtonLink from '../../components/button';
+import CopyClause from '../../components/copy-clause';
+import CtaBand from '../../components/cta-band';
+import FactCards, { type Fact } from '../../components/fact-cards';
+import PageHero from '../../components/page-hero';
+import Section, { SectionHead, Split, Stack } from '../../components/section';
 
-export const metadata: Metadata = { title: "For architects & specifiers" };
+export const metadata: Metadata = { title: 'For architects & specifiers' };
 
 const clause = `ANTI-TERMITE RETICULATION SYSTEM
 
@@ -29,27 +29,27 @@ Supply and install Termipore Elastomeric Reticulation Pipe beneath all ground-fl
 
 const coordination: Fact[] = [
   {
-    label: "Junction box locations",
-    title: "Accessible, on internal or external walls",
-    text: "Boxes must stay reachable for the life of the building. Avoid locations that will be boxed in by joinery.",
+    label: 'Junction box locations',
+    title: 'Accessible, on internal or external walls',
+    text: 'Boxes must stay reachable for the life of the building. Avoid locations that will be boxed in by joinery.',
     image: architectsFirst,
   },
   {
-    label: "Pipe runs",
-    title: "Perimeter and internal wall lines",
-    text: "Show runs and box spacing on the ground floor plan so the installer and contractor work from the same layout.",
+    label: 'Pipe runs',
+    title: 'Perimeter and internal wall lines',
+    text: 'Show runs and box spacing on the ground floor plan so the installer and contractor work from the same layout.',
     image: architectsSecond,
   },
   {
-    label: "Wet areas",
-    title: "Tanking over pipe zones",
-    text: "Bathrooms and wash areas need proper tiling and waterproofing. Seepage into the pipe shortens its life.",
+    label: 'Wet areas',
+    title: 'Tanking over pipe zones',
+    text: 'Bathrooms and wash areas need proper tiling and waterproofing. Seepage into the pipe shortens its life.',
     image: architectsThird,
   },
   {
-    label: "Above floor",
-    title: "PVC or PE, never Termipore",
-    text: "Termipore must not be exposed to air. Any connection above finished floor level is in PVC or PE.",
+    label: 'Above floor',
+    title: 'PVC or PE, never Termipore',
+    text: 'Termipore must not be exposed to air. Any connection above finished floor level is in PVC or PE.',
     image: architectsFourth,
   },
 ];
@@ -86,9 +86,15 @@ export default function ArchitectsPage() {
         <FactCards items={coordination} columns={2} imagePosition="left" />
       </Section>
 
-      <CtaBand title="Get a technical briefing for your practice." image={requestCta}>
+      <CtaBand
+        title="Get a technical briefing for your practice."
+        image={requestCta}
+      >
         <ButtonLink
-          href={{ pathname: "/contact", query: { topic: "Technical briefing" } }}
+          href={{
+            pathname: '/contact',
+            query: { topic: 'Technical briefing' },
+          }}
           arrow
         >
           Book a briefing
