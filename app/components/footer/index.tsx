@@ -1,31 +1,31 @@
-import { logoFooter } from "@/public/assets";
-import Image from "next/image";
-import Link from "next/link";
+import { logoFooter } from '@/public/assets';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const columns = [
   {
-    title: "System",
+    title: 'System',
     links: [
-      { href: "/system", label: "How it works" },
-      { href: "/specifications", label: "Specifications" },
-      { href: "/faq", label: "FAQ" },
-      { href: "/installers", label: "Certified installers" },
+      { href: '/system', label: 'How it works' },
+      { href: '/specifications', label: 'Specifications' },
+      { href: '/faq', label: 'FAQ' },
+      { href: '/installers', label: 'Certified installers' },
     ],
   },
   {
-    title: "For",
+    title: 'For',
     links: [
-      { href: "/architects", label: "Architects" },
-      { href: "/builders", label: "Construction & developers" },
-      { href: "/pco", label: "Pest control companies" },
-      { href: "/homeowners", label: "Homeowners" },
+      { href: '/architects', label: 'Architects' },
+      { href: '/builders', label: 'Construction & developers' },
+      { href: '/pco', label: 'Pest control companies' },
+      { href: '/homeowners', label: 'Homeowners' },
     ],
   },
 ];
 
 const heading =
-  "mb-3.5 font-mono text-[0.8rem] font-medium tracking-[0.12em] text-white uppercase";
-const list = "m-0 flex list-none flex-col gap-2 p-0";
+  'mb-3.5 font-mono text-[0.8rem] font-medium tracking-[0.12em] text-white uppercase';
+const list = 'm-0 flex list-none flex-col gap-2 p-0';
 
 export default function Footer() {
   return (
@@ -35,8 +35,7 @@ export default function Footer() {
           <Image
             src={logoFooter}
             alt="Termipore"
-            width={917}
-            height={248}
+            sizes="180px"
             className="mb-3 h-12 w-auto"
           />
           <div className="text-[0.85rem]">Anti-Termite Reticulation System</div>
@@ -78,7 +77,14 @@ export default function Footer() {
           Distributed in Sri Lanka by Ceylon Pest Control Company (Pvt) Ltd
         </span>
         <span>
-          © 2026 | <a href="https://147digitalsl.com" target="_blank" rel="noopener noreferrer">147 Digital SL</a>
+          © 2026 |{' '}
+          <a
+            href="https://147digitalsl.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            147 Digital SL
+          </a>
         </span>
       </div>
     </footer>

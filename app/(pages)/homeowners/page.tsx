@@ -1,20 +1,20 @@
-import Image from "next/image";
-import { homeOwnersFirst, homeOwnersHero, requestCta } from "@/public/assets";
-import type { Metadata } from "next";
-import ButtonLink from "../../components/button";
-import Callout from "../../components/callout";
-import CtaBand from "../../components/cta-band";
-import { NumberedList } from "../../components/lists";
-import PageHero from "../../components/page-hero";
-import Section, { Split, Stack } from "../../components/section";
+import Image from 'next/image';
+import { homeOwnersFirst, homeOwnersHero, requestCta } from '@/public/assets';
+import type { Metadata } from 'next';
+import ButtonLink from '../../components/button';
+import Callout from '../../components/callout';
+import CtaBand from '../../components/cta-band';
+import { NumberedList } from '../../components/lists';
+import PageHero from '../../components/page-hero';
+import Section, { Split, Stack } from '../../components/section';
 
-export const metadata: Metadata = { title: "For homeowners" };
+export const metadata: Metadata = { title: 'For homeowners' };
 
 const questions = [
-  "Is termite protection in the contract, and which method is being used?",
-  "Will the reticulation pipe be genuine Termipore, with a QR code on the roll?",
-  "Where will the junction boxes be, so I can reach them in future?",
-].map((text, i) => ({ key: String(i + 1).padStart(2, "0"), text }));
+  'Is termite protection in the contract, and which method is being used?',
+  'Will the reticulation pipe be genuine Termipore, with a QR code on the roll?',
+  'Where will the junction boxes be, so I can reach them in future?',
+].map((text, i) => ({ key: String(i + 1).padStart(2, '0'), text }));
 
 export default function HomeownersPage() {
   return (
@@ -40,7 +40,6 @@ export default function HomeownersPage() {
               src={homeOwnersFirst}
               alt="Technician injecting termiticide through a wall junction box"
               sizes="(min-width: 861px) 50vw, 100vw"
-              quality={100}
               className="h-auto w-full rounded-md"
             />
             <p>
@@ -57,7 +56,10 @@ export default function HomeownersPage() {
         </Split>
       </Section>
 
-      <CtaBand title="Building now? Find an installer near you." image={requestCta}>
+      <CtaBand
+        title="Building now? Find an installer near you."
+        image={requestCta}
+      >
         <ButtonLink href="/installers" arrow>
           Certified installers
         </ButtonLink>

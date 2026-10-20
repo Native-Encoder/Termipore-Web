@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useRef, useState } from "react";
+import { useRef, useState } from 'react';
 
 export default function CopyClause({ text }: { text: string }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
 
   // Fall back to selecting the text when the clipboard API is unavailable.
   const select = () => {
@@ -15,13 +15,13 @@ export default function CopyClause({ text }: { text: string }) {
     range.selectNodeContents(el);
     selection.removeAllRanges();
     selection.addRange(range);
-    setMessage("Selected. Press Ctrl+C / ⌘C to copy.");
+    setMessage('Selected. Press Ctrl+C / ⌘C to copy.');
   };
 
   const copy = async () => {
     try {
       await navigator.clipboard.writeText(text);
-      setMessage("Copied to clipboard.");
+      setMessage('Copied to clipboard.');
     } catch {
       select();
     }
