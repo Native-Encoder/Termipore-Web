@@ -22,7 +22,6 @@ export default function Steps({ items }: { items: Step[] }) {
                 alt=""
                 fill
                 sizes="(min-width: 861px) 25vw, (min-width: 521px) 50vw, 100vw"
-                quality={100}
                 className="object-cover"
               />
             </div>

@@ -37,10 +37,8 @@ export default function Header() {
           <Image
             src={logo}
             alt="Termipore"
-            width={2169}
-            height={725}
-            quality={100}
-            priority
+            sizes="192px"
+            preload
             className="-ml-2 h-16 w-auto"
           />
         </Link>

@@ -35,8 +35,7 @@ export default function Footer() {
           <Image
             src={logoFooter}
             alt="Termipore"
-            width={917}
-            height={248}
+            sizes="180px"
             className="mb-3 h-12 w-auto"
           />
           <div className="text-[0.85rem]">Anti-Termite Reticulation System</div>

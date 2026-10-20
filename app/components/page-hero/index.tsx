@@ -25,6 +25,7 @@ export default function PageHero({
             alt=""
             fill
             preload
+            placeholder={typeof image === "string" ? "empty" : "blur"}
             sizes="100vw"
             className="-z-20 object-cover object-[center_30%]"
           />

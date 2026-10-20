@@ -173,6 +173,7 @@ export default function Home() {
           alt=""
           fill
           preload
+          placeholder="blur"
           sizes="100vw"
           className="-z-10 object-cover"
         />
@@ -243,7 +244,6 @@ export default function Home() {
                     alt=""
                     fill
                     sizes="(min-width: 961px) 25vw, (min-width: 561px) 50vw, 100vw"
-                    quality={100}
                     className="object-cover"
                   />
                 </div>

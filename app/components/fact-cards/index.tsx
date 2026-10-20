@@ -44,7 +44,6 @@ export default function FactCards({
                       ? "(min-width: 561px) 50vw, 100vw"
                       : "(min-width: 861px) 33vw, (min-width: 561px) 50vw, 100vw"
                 }
-                quality={100}
                 className="object-cover"
               />
             </div>

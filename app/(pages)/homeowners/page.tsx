@@ -40,7 +40,6 @@ export default function HomeownersPage() {
               src={homeOwnersFirst}
               alt="Technician injecting termiticide through a wall junction box"
               sizes="(min-width: 861px) 50vw, 100vw"
-              quality={100}
               className="h-auto w-full rounded-md"
             />
             <p>
