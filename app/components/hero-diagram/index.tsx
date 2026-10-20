@@ -1,10 +1,10 @@
 const holes = [160, 200, 240, 280, 320, 360, 400, 440, 480, 520];
 const drops = [
-  { cx: 180, delay: "0s" },
-  { cx: 260, delay: ".6s" },
-  { cx: 340, delay: "1.2s" },
-  { cx: 420, delay: ".3s" },
-  { cx: 500, delay: ".9s" },
+  { cx: 180, delay: '0s' },
+  { cx: 260, delay: '.6s' },
+  { cx: 340, delay: '1.2s' },
+  { cx: 420, delay: '.3s' },
+  { cx: 500, delay: '.9s' },
 ];
 
 /** Ground-floor cross-section: pipe at plinth level fed from a wall junction box. */

@@ -1,15 +1,15 @@
-import Link from "next/link";
-import type { ComponentProps } from "react";
+import Link from 'next/link';
+import type { ComponentProps } from 'react';
 
 type ButtonLinkProps = ComponentProps<typeof Link> & {
-  variant?: "primary" | "ghost";
+  variant?: 'primary' | 'ghost';
   arrow?: boolean;
 };
 
 export default function ButtonLink({
-  variant = "primary",
+  variant = 'primary',
   arrow = false,
-  className = "",
+  className = '',
   children,
   ...props
 }: ButtonLinkProps) {

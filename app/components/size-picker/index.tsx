@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import Image, { type StaticImageData } from "next/image";
-import { pipe14mm, pipe17mm, pipe19mm } from "@/public/assets";
-import { useState } from "react";
+import Image, { type StaticImageData } from 'next/image';
+import { pipe14mm, pipe17mm, pipe19mm } from '@/public/assets';
+import { useState } from 'react';
 
-type SizeKey = "14" | "17" | "19";
+type SizeKey = '14' | '17' | '19';
 
 const sizes: Record<
   SizeKey,
@@ -25,48 +25,48 @@ const sizes: Record<
     image: StaticImageData | null;
   }
 > = {
-  "14": {
-    code: "TP095145",
-    line: "Orange line",
-    color: "#F26F21",
-    swatch: "bg-pipe-orange",
+  '14': {
+    code: 'TP095145',
+    line: 'Orange line',
+    color: '#F26F21',
+    swatch: 'bg-pipe-orange',
     od: 14.5,
     id: 9.5,
-    use: "Low-profile line for limited space between slab and tile. Medium flow over longer distance.",
-    holes: "40–70 per m",
-    flow: "14–24 L/m/hr",
-    bend: "0.3 m / 1 ft",
-    fit: "12 mm",
+    use: 'Low-profile line for limited space between slab and tile. Medium flow over longer distance.',
+    holes: '40–70 per m',
+    flow: '14–24 L/m/hr',
+    bend: '0.3 m / 1 ft',
+    fit: '12 mm',
     n: 14,
     image: pipe14mm,
   },
-  "17": {
-    code: "TP125175",
-    line: "Green line",
-    color: "#2E9D5A",
-    swatch: "bg-pipe-green",
+  '17': {
+    code: 'TP125175',
+    line: 'Green line',
+    color: '#2E9D5A',
+    swatch: 'bg-pipe-green',
     od: 17.5,
     id: 12.5,
-    use: "Standard size for all areas, including ground level. Uniform flow and good weight support.",
-    holes: "50–80 per m",
-    flow: "16–30 L/m/hr",
-    bend: "0.3 m / 1 ft",
-    fit: "16 mm",
+    use: 'Standard size for all areas, including ground level. Uniform flow and good weight support.',
+    holes: '50–80 per m',
+    flow: '16–30 L/m/hr',
+    bend: '0.3 m / 1 ft',
+    fit: '16 mm',
     n: 17,
     image: pipe17mm,
   },
-  "19": {
-    code: "TP125195",
-    line: "Red line",
-    color: "#D2342C",
-    swatch: "bg-pipe-red",
+  '19': {
+    code: 'TP125195',
+    line: 'Red line',
+    color: '#D2342C',
+    swatch: 'bg-pipe-red',
     od: 19.5,
     id: 12.5,
-    use: "Thicker wall for higher load and the most consistent flow along long runs.",
-    holes: "60–100 per m",
-    flow: "16–30 L/m/hr",
-    bend: "0.4 m / 1.2 ft",
-    fit: "16 mm",
+    use: 'Thicker wall for higher load and the most consistent flow along long runs.',
+    holes: '60–100 per m',
+    flow: '16–30 L/m/hr',
+    bend: '0.4 m / 1.2 ft',
+    fit: '16 mm',
     n: 20,
     image: pipe19mm,
   },
@@ -81,16 +81,16 @@ export function Swatch({ className }: { className: string }) {
 }
 
 export default function SizePicker() {
-  const [key, setKey] = useState<SizeKey>("17");
+  const [key, setKey] = useState<SizeKey>('17');
   const s = sizes[key];
 
   const specs = [
-    ["Inside × outside", `${s.id} × ${s.od} mm`],
-    ["Hole density", s.holes],
-    ["Flow @ 0.5 kg/cm²", s.flow],
-    ["Min. bend radius", s.bend],
-    ["Fittings", s.fit],
-    ["Roll", "125 m"],
+    ['Inside × outside', `${s.id} × ${s.od} mm`],
+    ['Hole density', s.holes],
+    ['Flow @ 0.5 kg/cm²', s.flow],
+    ['Min. bend radius', s.bend],
+    ['Fittings', s.fit],
+    ['Roll', '125 m'],
   ];
 
   return (
