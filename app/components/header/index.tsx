@@ -1,30 +1,30 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
-import Image from "next/image";
-import { logo } from "@/public/assets";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
+import Image from 'next/image';
+import { logo } from '@/public/assets';
 
 const mainLinks = [
-  { href: "/system", label: "The system" },
-  { href: "/specifications", label: "Specifications" },
-  { href: "/installers", label: "Installers" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/contact", label: "Contact" },
+  { href: '/system', label: 'The system' },
+  { href: '/specifications', label: 'Specifications' },
+  { href: '/installers', label: 'Installers' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 const audienceLinks = [
-  { href: "/architects", label: "Architects & specifiers" },
-  { href: "/builders", label: "Construction companies & developers" },
-  { href: "/pco", label: "Pest control companies" },
-  { href: "/homeowners", label: "Homeowners" },
+  { href: '/architects', label: 'Architects & specifiers' },
+  { href: '/builders', label: 'Construction companies & developers' },
+  { href: '/pco', label: 'Pest control companies' },
+  { href: '/homeowners', label: 'Homeowners' },
 ];
 
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const current = (href: string) => (pathname === href ? "page" : undefined);
+  const current = (href: string) => (pathname === href ? 'page' : undefined);
 
   return (
     <header className="sticky top-[env(safe-area-inset-top,0px)] z-50 border-b border-black/10 bg-sand text-charcoal">
@@ -37,10 +37,8 @@ export default function Header() {
           <Image
             src={logo}
             alt="Termipore"
-            width={2169}
-            height={725}
-            quality={100}
-            priority
+            sizes="192px"
+            preload
             className="-ml-2 h-16 w-auto"
           />
         </Link>
@@ -58,7 +56,7 @@ export default function Header() {
         <nav
           id="nav"
           aria-label="Main"
-          className={`flex items-center gap-1 max-[960px]:absolute max-[960px]:inset-x-0 max-[960px]:top-full max-[960px]:flex-col max-[960px]:items-stretch max-[960px]:border-b max-[960px]:border-black/10 max-[960px]:bg-sand max-[960px]:px-4 max-[960px]:pt-3 max-[960px]:pb-4.5 ${open ? "" : "max-[960px]:hidden"}`}
+          className={`flex items-center gap-1 max-[960px]:absolute max-[960px]:inset-x-0 max-[960px]:top-full max-[960px]:flex-col max-[960px]:items-stretch max-[960px]:border-b max-[960px]:border-black/10 max-[960px]:bg-sand max-[960px]:px-4 max-[960px]:pt-3 max-[960px]:pb-4.5 ${open ? '' : 'max-[960px]:hidden'}`}
         >
           {mainLinks.map((link) => (
             <Link
@@ -82,7 +80,7 @@ export default function Header() {
       </div>
 
       <div className="border-t border-line bg-surface">
-        <div className="wrap flex min-h-11 items-center gap-1.5 overflow-x-auto [scrollbar-width:none]">
+        <div className="wrap flex min-h-11 [scrollbar-width:none] items-center gap-1.5 overflow-x-auto">
           <span className="mr-2 font-mono text-[0.7rem] tracking-[0.12em] whitespace-nowrap text-muted uppercase">
             For
           </span>
