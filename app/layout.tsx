@@ -8,7 +8,7 @@ import { WhatsappButton } from './components/icons';
 const poppins = Poppins({
   variable: '--font-poppins',
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
+  weight: ['400', '500', '600', '700', '800'],
 });
 
 const plexMono = IBM_Plex_Mono({
