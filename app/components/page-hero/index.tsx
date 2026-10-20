@@ -1,4 +1,4 @@
-import Image, { type StaticImageData } from "next/image";
+import Image, { type StaticImageData } from 'next/image';
 
 export default function PageHero({
   eyebrow,
@@ -15,7 +15,7 @@ export default function PageHero({
   return (
     <section
       className={`on-blue relative isolate overflow-hidden py-[clamp(48px,6vw,80px)] ${
-        image ? "flex min-h-[clamp(320px,36vw,480px)] items-center" : ""
+        image ? 'flex min-h-[clamp(320px,36vw,480px)] items-center' : ''
       }`}
     >
       {image && (
@@ -25,6 +25,7 @@ export default function PageHero({
             alt=""
             fill
             preload
+            placeholder={typeof image === 'string' ? 'empty' : 'blur'}
             sizes="100vw"
             className="-z-20 object-cover object-[center_30%]"
           />

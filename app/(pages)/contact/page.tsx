@@ -1,15 +1,15 @@
-import { contactHero } from "@/public/assets";
-import type { Metadata } from "next";
-import { Suspense } from "react";
-import EnquiryForm from "../../components/enquiry-form";
-import PageHero from "../../components/page-hero";
-import Section, { Split } from "../../components/section";
+import { contactHero } from '@/public/assets';
+import type { Metadata } from 'next';
+import { Suspense } from 'react';
+import EnquiryForm from '../../components/enquiry-form';
+import PageHero from '../../components/page-hero';
+import Section, { Split } from '../../components/section';
 
-export const metadata: Metadata = { title: "Contact" };
+export const metadata: Metadata = { title: 'Contact' };
 
 const details = [
-  { label: "Phone · 24/7", value: "0777 367 719" },
-  { label: "Email", value: "info@termipore.lk" },
+  { label: 'Phone · 24/7', value: '0777 367 719' },
+  { label: 'Email', value: 'info@termipore.lk' },
 ];
 
 export default function ContactPage() {

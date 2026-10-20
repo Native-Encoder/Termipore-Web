@@ -1,55 +1,55 @@
-import Image from "next/image";
-import { systemHero, requestCta } from "@/public/assets";
-import type { Metadata } from "next";
-import ButtonLink from "../../components/button";
+import Image from 'next/image';
+import { systemHero, requestCta } from '@/public/assets';
+import type { Metadata } from 'next';
+import ButtonLink from '../../components/button';
 import ComparisonTable, {
   type ComparisonRow,
-} from "../../components/comparison-table";
-import CtaBand from "../../components/cta-band";
-import FactCards, { type Fact } from "../../components/fact-cards";
-import { NumberedList } from "../../components/lists";
-import PageHero from "../../components/page-hero";
-import Section, { SectionHead, Split, Stack } from "../../components/section";
-import { systemDrip, systemPVC, systemTermi } from "@/public/assets";
+} from '../../components/comparison-table';
+import CtaBand from '../../components/cta-band';
+import FactCards, { type Fact } from '../../components/fact-cards';
+import { NumberedList } from '../../components/lists';
+import PageHero from '../../components/page-hero';
+import Section, { SectionHead, Split, Stack } from '../../components/section';
+import { systemDrip, systemPVC, systemTermi } from '@/public/assets';
 
-export const metadata: Metadata = { title: "The system" };
+export const metadata: Metadata = { title: 'The system' };
 
 const ratings = [
   {
-    key: "0.5 HP",
-    text: "Provide an outlet or box every 20 m (60 ft). For longer runs, use a larger pump or inject from both ends.",
+    key: '0.5 HP',
+    text: 'Provide an outlet or box every 20 m (60 ft). For longer runs, use a larger pump or inject from both ends.',
   },
   {
-    key: "1.0 HP",
-    text: "Monobloc pump: maximum continuous length 30 m (100 ft). Beyond that, inject from both ends.",
+    key: '1.0 HP',
+    text: 'Monobloc pump: maximum continuous length 30 m (100 ft). Beyond that, inject from both ends.',
   },
   {
-    key: "EC/SC",
-    text: "Works with emulsifiable and suspension concentrates. EC preferred. Dilution and dosing are unchanged.",
+    key: 'EC/SC',
+    text: 'Works with emulsifiable and suspension concentrates. EC preferred. Dilution and dosing are unchanged.',
   },
   {
-    key: "Life",
-    text: "30–50 years when concealed and not exposed to the atmosphere.",
+    key: 'Life',
+    text: '30–50 years when concealed and not exposed to the atmosphere.',
   },
 ];
 
 const failures: Fact[] = [
   {
-    label: "",
-    title: "Built for farms",
+    label: '',
+    title: 'Built for farms',
     text: "Three to four holes per metre, all on one side. They clog within a few years, and a buried section can't be dug up and replaced the way a farmer would in a field.",
     image: systemDrip,
   },
   {
-    label: "",
-    title: "Holes too large, too uneven",
+    label: '',
+    title: 'Holes too large, too uneven',
     text: "Fine, uniform holes can't be drilled by hand. Most of the flow leaves near the inlet, so the far end of the run gets little or nothing.",
     image: systemPVC,
   },
   {
-    label: "",
-    title: "Honeycomb elastomeric wall",
-    text: "40–100 micro-holes per metre around the full circumference, depending on size. They open under pump pressure and close after, so they resist blocking.",
+    label: '',
+    title: 'Honeycomb elastomeric wall',
+    text: '40–100 micro-holes per metre around the full circumference, depending on size. They open under pump pressure and close after, so they resist blocking.',
     highlight: true,
     image: systemTermi,
   },
@@ -57,47 +57,51 @@ const failures: Fact[] = [
 
 const comparison: ComparisonRow[] = [
   {
-    label: "Purpose-built for termite reticulation",
-    cells: ["Yes", ["No, repurposed", "nope"], ["—", "dim"]],
+    label: 'Purpose-built for termite reticulation',
+    cells: ['Yes', ['No, repurposed', 'nope'], ['—', 'dim']],
   },
   {
-    label: "Even delivery along full length",
-    cells: ["Yes", ["No", "nope"], ["—", "dim"]],
+    label: 'Even delivery along full length',
+    cells: ['Yes', ['No', 'nope'], ['—', 'dim']],
   },
   {
-    label: "Micro-holes on all sides",
-    cells: ["Yes", ["One side only", "nope"], ["—", "dim"]],
+    label: 'Micro-holes on all sides',
+    cells: ['Yes', ['One side only', 'nope'], ['—', 'dim']],
   },
   {
-    label: "Holes per metre",
-    cells: [["40–100", "mono"], ["3–4", "mono", "nope"], ["—", "dim"]],
-  },
-  {
-    label: "Resists blocking (sand / mud)",
-    cells: ["Yes", ["No", "nope"], ["—", "dim"]],
-  },
-  {
-    label: "Wall thick enough to resist compression",
-    cells: ["Yes", ["No", "nope"], ["—", "dim"]],
-  },
-  {
-    label: "Flow checked on every roll",
-    cells: ["Yes", ["No", "nope"], ["—", "dim"]],
-  },
-  {
-    label: "Tested, RoHS-compliant material",
-    cells: ["Yes", ["Not known", "dim"], ["Not known", "dim"]],
-  },
-  {
-    label: "Re-treat without disturbing occupants",
-    cells: ["Yes", "Yes", ["No", "nope"]],
-  },
-  {
-    label: "Design life",
+    label: 'Holes per metre',
     cells: [
-      ["30–50 yrs", "mono"],
-      ["Unreliable", "nope"],
-      ["None", "nope"],
+      ['40–100', 'mono'],
+      ['3–4', 'mono', 'nope'],
+      ['—', 'dim'],
+    ],
+  },
+  {
+    label: 'Resists blocking (sand / mud)',
+    cells: ['Yes', ['No', 'nope'], ['—', 'dim']],
+  },
+  {
+    label: 'Wall thick enough to resist compression',
+    cells: ['Yes', ['No', 'nope'], ['—', 'dim']],
+  },
+  {
+    label: 'Flow checked on every roll',
+    cells: ['Yes', ['No', 'nope'], ['—', 'dim']],
+  },
+  {
+    label: 'Tested, RoHS-compliant material',
+    cells: ['Yes', ['Not known', 'dim'], ['Not known', 'dim']],
+  },
+  {
+    label: 'Re-treat without disturbing occupants',
+    cells: ['Yes', 'Yes', ['No', 'nope']],
+  },
+  {
+    label: 'Design life',
+    cells: [
+      ['30–50 yrs', 'mono'],
+      ['Unreliable', 'nope'],
+      ['None', 'nope'],
     ],
   },
 ];

@@ -1,15 +1,17 @@
-"use client";
+'use client';
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react';
 
 const NUMBER = /\d[\d,]*/g;
 const DURATION = 1800;
 
 function render(value: string, progress: number) {
   return value.replace(NUMBER, (match) => {
-    const target = Number(match.replace(/,/g, ""));
+    const target = Number(match.replace(/,/g, ''));
     const current = Math.round(target * progress);
-    return match.includes(",") ? current.toLocaleString("en-US") : String(current);
+    return match.includes(',')
+      ? current.toLocaleString('en-US')
+      : String(current);
   });
 }
 
@@ -20,7 +22,7 @@ export default function CountUp({ value }: { value: string }) {
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       return;
     }
 
