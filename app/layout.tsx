@@ -8,8 +8,11 @@ import ImageWarmup from './components/image-warmup';
 import {
   homeHero,
   architectHero,
+  architectHeroMobile,
   engineerHero,
+  engineerHeroMobile,
   pestHero,
+  pestHeroMobile,
   homeOwnersHero,
   homeOwnersHeroMobile,
   systemHero,
@@ -25,8 +28,11 @@ import {
 const warmupImages = [
   homeHero,
   architectHero,
+  { src: architectHeroMobile, media: '(max-width: 767px)' },
   engineerHero,
+  { src: engineerHeroMobile, media: '(max-width: 767px)' },
   pestHero,
+  { src: pestHeroMobile, media: '(max-width: 767px)' },
   homeOwnersHero,
   { src: homeOwnersHeroMobile, media: '(max-width: 767px)' },
   systemHero,

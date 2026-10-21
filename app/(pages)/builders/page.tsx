@@ -1,4 +1,4 @@
-import { engineerHero, requestCta } from '@/public/assets';
+import { engineerHero, engineerHeroMobile, requestCta } from '@/public/assets';
 import type { Metadata } from 'next';
 import ButtonLink from '../../components/button';
 import CtaBand from '../../components/cta-band';
@@ -90,6 +90,9 @@ export default function BuildersPage() {
         title="Termite protection that fits the programme and survives handover."
         lead="Termipore goes in between the PCC and the floor finish. Done right, it's a short, contained activity that gives your buyers protection they can maintain without ever lifting a tile."
         image={engineerHero}
+        mobileImage={engineerHeroMobile}
+        mobileBackdrop="#020e3e"
+        mobileClear={0.62}
       />
 
       <Section>

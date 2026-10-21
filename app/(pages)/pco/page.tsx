@@ -1,4 +1,4 @@
-import { pestHero, requestCta } from '@/public/assets';
+import { pestHero, pestHeroMobile, requestCta } from '@/public/assets';
 import type { Metadata } from 'next';
 import ButtonLink from '../../components/button';
 import CtaBand from '../../components/cta-band';
@@ -76,6 +76,9 @@ export default function PcoPage() {
         title="The pipe you can warrant."
         lead="Your reputation rides on what happens under the floor after you leave site. Termipore delivers termiticide evenly along the whole run, so the protection you quote is the protection the client gets."
         image={pestHero}
+        mobileImage={pestHeroMobile}
+        mobileBackdrop="#05103f"
+        mobileClear={0.62}
       />
 
       <Section>

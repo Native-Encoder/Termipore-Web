@@ -27,11 +27,14 @@ export { default as systemHero } from './images/primary-hero/system-hero.webp';
 
 // Secondary page heroes
 export { default as architectHero } from './images/secondary-hero/architect.webp';
+export { default as architectHeroMobile } from './images/secondary-hero/architect-mobile.webp';
 export { default as architectsHero } from './images/secondary-hero/architects-hero.webp';
 export { default as engineerHero } from './images/secondary-hero/engineer.webp';
+export { default as engineerHeroMobile } from './images/secondary-hero/engineer-mobile.webp';
 export { default as homeOwnersHero } from './images/secondary-hero/home-owners.webp';
 export { default as homeOwnersHeroMobile } from './images/secondary-hero/home-owners-mobile.webp';
 export { default as pestHero } from './images/secondary-hero/pest.webp';
+export { default as pestHeroMobile } from './images/secondary-hero/pest-mobile.webp';
 
 // Specification page
 export { default as pipe14mm } from './images/specification-page/14mm.webp';
