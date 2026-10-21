@@ -24,6 +24,7 @@ import CountUp from './components/count-up';
 import CtaBand from './components/cta-band';
 import FactCards, { type Fact } from './components/fact-cards';
 import HeroDiagram from './components/hero-diagram';
+import { blurBackground } from './components/page-hero';
 import Section, { SectionHead, Split, Stack } from './components/section';
 import Steps, { type Step } from './components/steps';
 
@@ -208,10 +209,14 @@ function HeroImage() {
         {...desktop}
         loading="eager"
         fetchPriority="high"
-        style={{
-          aspectRatio: `${homeHeroMobile.width} / ${homeHeroMobile.height}`,
-        }}
-        className="absolute inset-0 -z-10 size-full object-cover max-md:relative max-md:inset-auto max-md:-mx-[clamp(16px,4vw,40px)] max-md:-mt-[38vw] max-md:-mb-[8vw] max-md:h-auto max-md:w-[calc(100%_+_2*clamp(16px,4vw,40px))] max-md:max-w-none max-md:[mask-image:linear-gradient(to_bottom,transparent,black_30%,black_80%,transparent)] md:aspect-auto!"
+        style={
+          {
+            aspectRatio: `${homeHeroMobile.width} / ${homeHeroMobile.height}`,
+            '--blur': blurBackground(homeHero),
+            '--blur-mobile': blurBackground(homeHeroMobile),
+          } as React.CSSProperties
+        }
+        className="absolute inset-0 -z-10 size-full bg-(image:--blur) bg-cover bg-center bg-no-repeat object-cover max-md:bg-(image:--blur-mobile)max-md:relative max-md:inset-auto max-md:-mx-[clamp(16px,4vw,40px)] max-md:-mt-[38vw] max-md:-mb-[8vw] max-md:h-auto max-md:w-[calc(100%_+_2*clamp(16px,4vw,40px))] max-md:max-w-none max-md:[mask-image:linear-gradient(to_bottom,transparent,black_30%,black_80%,transparent)] md:aspect-auto!"
       />
     </picture>
   );
