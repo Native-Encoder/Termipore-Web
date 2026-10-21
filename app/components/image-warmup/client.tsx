@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-type Source = { srcSet: string; sizes: string; src: string };
+type Source = { srcSet: string; sizes: string; src: string; media: string };
 
 export default function WarmupClient({ sources }: { sources: Source[] }) {
   useEffect(() => {
@@ -15,6 +15,7 @@ export default function WarmupClient({ sources }: { sources: Source[] }) {
     const warm = () => {
       for (const s of sources) {
         if (cancelled) return;
+        if (s.media && !window.matchMedia(s.media).matches) continue;
         const img = new Image();
         img.fetchPriority = 'low';
         img.decoding = 'async';
