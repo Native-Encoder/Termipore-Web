@@ -130,7 +130,7 @@ function ArtDirectedImage({
         srcSet={mobile.srcSet}
         sizes={mobile.sizes}
       />
-      {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
+      {/* eslint-disable-next-line jsx-a11y/alt-text */}
       <img
         {...desktop}
         loading="eager"
