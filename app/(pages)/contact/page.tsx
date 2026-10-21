@@ -1,4 +1,4 @@
-import { contactHero } from '@/public/assets';
+import { contactHero, contactHeroMobile } from '@/public/assets';
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import EnquiryForm from '../../components/enquiry-form';
@@ -20,6 +20,9 @@ export default function ContactPage() {
         title="Tell us about the project."
         lead="Quotes, technical documents, site visits and trade supply. We reply within one working day."
         image={contactHero}
+        mobileImage={contactHeroMobile}
+        mobileBackdrop="#040d3b"
+        mobileClear={0.5}
       />
 
       <Section>

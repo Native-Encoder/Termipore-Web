@@ -1,5 +1,6 @@
 import {
   architectHero,
+  architectHeroMobile,
   architectsFirst,
   architectsFourth,
   architectsSecond,
@@ -62,6 +63,9 @@ export default function ArchitectsPage() {
         title="Specify termite protection that outlasts the treatment."
         lead="A soil treatment is a single event. A Termipore network is a building element with a design life, a fixed specification and test data behind it. It belongs on the drawings."
         image={architectHero}
+        mobileImage={architectHeroMobile}
+        mobileBackdrop="#06103f"
+        mobileClear={0.62}
       />
 
       <Section>

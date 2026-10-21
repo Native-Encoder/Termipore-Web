@@ -1,5 +1,10 @@
 import Image from 'next/image';
-import { homeOwnersFirst, homeOwnersHero, requestCta } from '@/public/assets';
+import {
+  homeOwnersFirst,
+  homeOwnersHero,
+  homeOwnersHeroMobile,
+  requestCta,
+} from '@/public/assets';
 import type { Metadata } from 'next';
 import ButtonLink from '../../components/button';
 import Callout from '../../components/callout';
@@ -24,6 +29,8 @@ export default function HomeownersPage() {
         title="Decide before the floor goes down."
         lead="Termipore is installed while your house is being built. Once tiles are laid, the chance has passed. A short conversation with your builder now saves drilling through your floors later."
         image={homeOwnersHero}
+        mobileImage={homeOwnersHeroMobile}
+        mobileBackdrop="#040f3e"
       />
 
       <Section>
