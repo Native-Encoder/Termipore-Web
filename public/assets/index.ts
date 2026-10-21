@@ -30,6 +30,7 @@ export { default as architectHero } from './images/secondary-hero/architect.webp
 export { default as architectsHero } from './images/secondary-hero/architects-hero.webp';
 export { default as engineerHero } from './images/secondary-hero/engineer.webp';
 export { default as homeOwnersHero } from './images/secondary-hero/home-owners.webp';
+export { default as homeOwnersHeroMobile } from './images/secondary-hero/home-owners-mobile.webp';
 export { default as pestHero } from './images/secondary-hero/pest.webp';
 
 // Specification page
