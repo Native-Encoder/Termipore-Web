@@ -1,9 +1,11 @@
-import Image from 'next/image';
+import Image, { getImageProps } from 'next/image';
+import { preload } from 'react-dom';
 import {
   architectHome,
   engineerHome,
   pestHome,
   homeHero,
+  homeHeroMobile,
   requestCta,
   homeOwnersHome,
   firstImage,
@@ -168,19 +170,57 @@ const evidence: Fact[] = [
   },
 ];
 
+const MOBILE_MEDIA = '(max-width: 767px)';
+
+/**
+ * Wide screens: a background photo behind the whole hero. Phones: a portrait
+ * photo in the flow between the buttons and the diagram, tucked under the
+ * text and faded into the navy at both ends. `<picture>` so each device
+ * downloads only the photo it shows.
+ */
+function HeroImage() {
+  const common = { alt: '', sizes: '100vw' };
+  const { props: desktop } = getImageProps({ ...common, src: homeHero });
+  const { props: mobile } = getImageProps({ ...common, src: homeHeroMobile });
+
+  for (const [props, media] of [
+    [desktop, '(min-width: 768px)'],
+    [mobile, MOBILE_MEDIA],
+  ] as const) {
+    preload(props.src, {
+      as: 'image',
+      imageSrcSet: props.srcSet,
+      imageSizes: props.sizes,
+      fetchPriority: 'high',
+      media,
+    });
+  }
+
+  return (
+    <picture className="contents">
+      <source
+        media={MOBILE_MEDIA}
+        srcSet={mobile.srcSet}
+        sizes={mobile.sizes}
+      />
+      {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
+      <img
+        {...desktop}
+        loading="eager"
+        fetchPriority="high"
+        style={{
+          aspectRatio: `${homeHeroMobile.width} / ${homeHeroMobile.height}`,
+        }}
+        className="absolute inset-0 -z-10 size-full object-cover max-md:relative max-md:inset-auto max-md:-mx-[clamp(16px,4vw,40px)] max-md:-mt-[38vw] max-md:-mb-[8vw] max-md:h-auto max-md:w-[calc(100%_+_2*clamp(16px,4vw,40px))] max-md:max-w-none max-md:[mask-image:linear-gradient(to_bottom,transparent,black_30%,black_80%,transparent)] md:aspect-auto!"
+      />
+    </picture>
+  );
+}
+
 export default function Home() {
   return (
     <>
-      <section className="on-blue relative isolate overflow-hidden pt-[clamp(48px,7vw,88px)]">
-        <Image
-          src={homeHero}
-          alt=""
-          fill
-          preload
-          placeholder="blur"
-          sizes="100vw"
-          className="-z-10 object-cover"
-        />
+      <section className="on-blue relative isolate overflow-hidden pt-[clamp(48px,7vw,88px)] max-md:bg-[#040c39]">
         <div className="wrap">
           <div className="grid grid-cols-1 items-center gap-[clamp(24px,4vw,56px)] *:min-w-0 min-[861px]:grid-cols-[1.05fr_1fr]">
             <div className="flex flex-col gap-5.5 pb-[clamp(32px,5vw,64px)]">
@@ -205,6 +245,7 @@ export default function Home() {
                 </ButtonLink>
               </ButtonRow>
             </div>
+            <HeroImage />
             <HeroDiagram />
           </div>
 

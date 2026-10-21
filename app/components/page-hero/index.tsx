@@ -35,10 +35,12 @@ export default function PageHero({
     <section
       className={`on-blue relative isolate overflow-hidden py-[clamp(48px,6vw,80px)] ${
         image ? 'flex min-h-[clamp(320px,36vw,480px)] items-center' : ''
-      } ${artDirected ? 'max-md:min-h-0 max-md:items-start max-md:bg-(--hero-backdrop) max-md:pb-(--hero-clear)' : ''}`}
+      } ${artDirected ? 'max-md:min-h-(--hero-img-h) max-md:items-start max-md:bg-(--hero-backdrop) max-md:pb-(--hero-clear)' : ''}`}
       style={
         mobileImage
           ? ({
+              // Never shorter than the photo, so it always spans the width.
+              '--hero-img-h': `${(mobileImage.height / mobileImage.width) * 100}vw`,
               '--hero-clear': `${(mobileImage.height / mobileImage.width) * mobileClear * 100}vw`,
               '--hero-backdrop': mobileBackdrop ?? 'var(--color-brand)',
             } as React.CSSProperties)
@@ -67,7 +69,7 @@ export default function PageHero({
           aria-hidden
           className={`absolute inset-0 -z-10 bg-linear-to-r from-[#14151e]/85 via-[#14151e]/60 to-[#14151e]/35 ${
             artDirected
-              ? 'max-md:bg-linear-to-b max-md:from-[#14151e]/40 max-md:via-transparent max-md:via-50% max-md:to-transparent'
+              ? 'max-md:bg-linear-to-b max-md:from-[#14151e]/65 max-md:via-[#14151e]/30 max-md:via-45% max-md:to-transparent'
               : ''
           }`}
         />
