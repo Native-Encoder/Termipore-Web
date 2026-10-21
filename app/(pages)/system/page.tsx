@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { systemHero, systemHeroMobile, requestCta } from '@/public/assets';
 import type { Metadata } from 'next';
 import ButtonLink from '../../components/button';
