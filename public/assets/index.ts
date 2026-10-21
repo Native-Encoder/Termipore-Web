@@ -7,6 +7,7 @@ export { default as requestCta } from './images/common/request.webp';
 
 // Home page
 export { default as homeHero } from './images/home-page/home-hero.webp';
+export { default as homeHeroMobile } from './images/home-page/home-hero-mobile.webp';
 export { default as architectHome } from './images/home-page/architect-home.webp';
 export { default as engineerHome } from './images/home-page/engineer-home.webp';
 export { default as pestHome } from './images/home-page/pest-home.webp';
@@ -20,10 +21,15 @@ export { default as sixthImage } from './images/home-page/6.webp';
 
 // Primary page heroes
 export { default as faqHero } from './images/primary-hero/FAQ.webp';
+export { default as faqHeroMobile } from './images/primary-hero/FAQ-mobile.webp';
 export { default as contactHero } from './images/primary-hero/contact.webp';
+export { default as contactHeroMobile } from './images/primary-hero/contact-mobile.webp';
 export { default as installersHero } from './images/primary-hero/installers.webp';
+export { default as installersHeroMobile } from './images/primary-hero/installers-mobile.webp';
 export { default as specificationsHero } from './images/primary-hero/specifications.webp';
+export { default as specificationsHeroMobile } from './images/primary-hero/specifications-mobile.webp';
 export { default as systemHero } from './images/primary-hero/system-hero.webp';
+export { default as systemHeroMobile } from './images/primary-hero/system-hero-mobile.webp';
 
 // Secondary page heroes
 export { default as architectHero } from './images/secondary-hero/architect.webp';

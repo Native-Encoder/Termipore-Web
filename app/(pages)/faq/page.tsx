@@ -1,4 +1,4 @@
-import { faqHero } from '@/public/assets';
+import { faqHero, faqHeroMobile } from '@/public/assets';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FaqList, { type FaqItem } from '../../components/faq-list';
@@ -54,7 +54,14 @@ const faqs: FaqItem[] = [
 export default function FaqPage() {
   return (
     <>
-      <PageHero eyebrow="FAQ" title="Common questions" image={faqHero} />
+      <PageHero
+        eyebrow="FAQ"
+        title="Common questions"
+        image={faqHero}
+        mobileImage={faqHeroMobile}
+        mobileBackdrop="#060e3b"
+        mobileClear={0.55}
+      />
       <Section narrow>
         <FaqList items={faqs} />
       </Section>
