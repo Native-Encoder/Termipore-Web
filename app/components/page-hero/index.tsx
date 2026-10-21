@@ -12,6 +12,7 @@ export default function PageHero({
   image,
   mobileImage,
   mobileBackdrop,
+  mobileClear = 0.55,
 }: {
   eyebrow: string;
   title: string;
@@ -25,6 +26,8 @@ export default function PageHero({
   mobileImage?: StaticImageData;
   /** Fill above the mobile photo; match the colour of its top edge. */
   mobileBackdrop?: string;
+  /** Share of the mobile photo (from the bottom) kept clear of the text. */
+  mobileClear?: number;
 }) {
   const artDirected = Boolean(image && mobileImage);
 
@@ -32,11 +35,11 @@ export default function PageHero({
     <section
       className={`on-blue relative isolate overflow-hidden py-[clamp(48px,6vw,80px)] ${
         image ? 'flex min-h-[clamp(320px,36vw,480px)] items-center' : ''
-      } ${artDirected ? 'max-md:min-h-0 max-md:items-start max-md:bg-(--hero-backdrop) max-md:pb-[calc(var(--hero-img-h)*0.55)]' : ''}`}
+      } ${artDirected ? 'max-md:min-h-0 max-md:items-start max-md:bg-(--hero-backdrop) max-md:pb-(--hero-clear)' : ''}`}
       style={
         mobileImage
           ? ({
-              '--hero-img-h': `${(mobileImage.height / mobileImage.width) * 100}vw`,
+              '--hero-clear': `${(mobileImage.height / mobileImage.width) * mobileClear * 100}vw`,
               '--hero-backdrop': mobileBackdrop ?? 'var(--color-brand)',
             } as React.CSSProperties)
           : undefined
