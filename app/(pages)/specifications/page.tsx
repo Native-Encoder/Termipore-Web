@@ -1,4 +1,8 @@
-import { specificationsHero, requestCta } from '@/public/assets';
+import {
+  specificationsHero,
+  specificationsHeroMobile,
+  requestCta,
+} from '@/public/assets';
 import type { Metadata } from 'next';
 import ButtonLink from '../../components/button';
 import CtaBand from '../../components/cta-band';
@@ -125,6 +129,9 @@ export default function SpecsPage() {
         title="Specifications"
         lead="Elastomeric Reticulation Pipe in three sizes, supplied on 125 m rolls with a coloured marking line for identification on site."
         image={specificationsHero}
+        mobileImage={specificationsHeroMobile}
+        mobileBackdrop="#000a38"
+        mobileClear={0.45}
       />
 
       <Section>

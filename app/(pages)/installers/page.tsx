@@ -1,4 +1,4 @@
-import { installersHero } from '@/public/assets';
+import { installersHero, installersHeroMobile } from '@/public/assets';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Callout from '../../components/callout';
@@ -26,6 +26,9 @@ export default function InstallersPage() {
         title="Installed by people trained on the system."
         lead="Certified installers lay, connect and charge Termipore to the manufacturer's guidelines. Contact one directly, or send an enquiry and we'll connect you with the nearest installer."
         image={installersHero}
+        mobileImage={installersHeroMobile}
+        mobileBackdrop="#040d3b"
+        mobileClear={0.66}
       />
 
       <Section>

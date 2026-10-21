@@ -35,10 +35,12 @@ export default function PageHero({
     <section
       className={`on-blue relative isolate overflow-hidden py-[clamp(48px,6vw,80px)] ${
         image ? 'flex min-h-[clamp(320px,36vw,480px)] items-center' : ''
-      } ${artDirected ? 'max-md:min-h-0 max-md:items-start max-md:bg-(--hero-backdrop) max-md:pb-(--hero-clear)' : ''}`}
+      } ${artDirected ? 'max-md:min-h-(--hero-img-h) max-md:items-start max-md:bg-(--hero-backdrop) max-md:pb-(--hero-clear)' : ''}`}
       style={
         mobileImage
           ? ({
+              // Never shorter than the photo, so it always spans the width.
+              '--hero-img-h': `${(mobileImage.height / mobileImage.width) * 100}vw`,
               '--hero-clear': `${(mobileImage.height / mobileImage.width) * mobileClear * 100}vw`,
               '--hero-backdrop': mobileBackdrop ?? 'var(--color-brand)',
             } as React.CSSProperties)
@@ -67,7 +69,7 @@ export default function PageHero({
           aria-hidden
           className={`absolute inset-0 -z-10 bg-linear-to-r from-[#14151e]/85 via-[#14151e]/60 to-[#14151e]/35 ${
             artDirected
-              ? 'max-md:bg-linear-to-b max-md:from-[#14151e]/40 max-md:via-transparent max-md:via-50% max-md:to-transparent'
+              ? 'max-md:bg-linear-to-b max-md:from-[#14151e]/65 max-md:via-[#14151e]/30 max-md:via-45% max-md:to-transparent'
               : ''
           }`}
         />
@@ -84,8 +86,18 @@ export default function PageHero({
 }
 
 /**
+ * Next's blurred placeholder for a static import, as a CSS background-image
+ * value. Raw `<picture>`/`<img>` markup doesn't get one automatically.
+ */
+export function blurBackground(src: string | StaticImageData) {
+  if (typeof src === 'string') return 'none';
+  const { props } = getImageProps({ src, alt: '', placeholder: 'blur' });
+  return props.style?.backgroundImage ?? 'none';
+}
+
+/**
  * `<picture>` so each device downloads only the photo it shows. Preloads are
- * media-scoped for the same reason.
+ * media-scoped for the same reason. Each photo's blur shows until it loads.
  */
 function ArtDirectedImage({
   image,
@@ -123,7 +135,14 @@ function ArtDirectedImage({
         {...desktop}
         loading="eager"
         fetchPriority="high"
-        className="-z-20 object-cover object-[center_30%] max-md:object-contain max-md:object-bottom"
+        style={
+          {
+            ...desktop.style,
+            '--blur': blurBackground(image),
+            '--blur-mobile': blurBackground(mobileImage),
+          } as React.CSSProperties
+        }
+        className="-z-20 bg-(image:--blur) bg-cover bg-position-[center_30%] bg-no-repeat object-cover object-[center_30%] max-md:bg-(image:--blur-mobile) max-md:bg-contain max-md:bg-bottom max-md:object-contain max-md:object-bottom"
       />
     </picture>
   );
