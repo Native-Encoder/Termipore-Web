@@ -7,6 +7,7 @@ import { WhatsappButton } from './components/icons';
 import ImageWarmup from './components/image-warmup';
 import {
   homeHero,
+  homeHeroMobile,
   architectHero,
   architectHeroMobile,
   engineerHero,
@@ -16,10 +17,15 @@ import {
   homeOwnersHero,
   homeOwnersHeroMobile,
   systemHero,
+  systemHeroMobile,
   specificationsHero,
+  specificationsHeroMobile,
   installersHero,
+  installersHeroMobile,
   faqHero,
+  faqHeroMobile,
   contactHero,
+  contactHeroMobile,
   requestCta,
 } from '@/public/assets';
 
@@ -27,6 +33,7 @@ import {
 // instantly. Keep in sync with the `image` passed to PageHero on each page.
 const warmupImages = [
   homeHero,
+  { src: homeHeroMobile, media: '(max-width: 767px)' },
   architectHero,
   { src: architectHeroMobile, media: '(max-width: 767px)' },
   engineerHero,
@@ -36,10 +43,15 @@ const warmupImages = [
   homeOwnersHero,
   { src: homeOwnersHeroMobile, media: '(max-width: 767px)' },
   systemHero,
+  { src: systemHeroMobile, media: '(max-width: 767px)' },
   specificationsHero,
+  { src: specificationsHeroMobile, media: '(max-width: 767px)' },
   installersHero,
+  { src: installersHeroMobile, media: '(max-width: 767px)' },
   faqHero,
+  { src: faqHeroMobile, media: '(max-width: 767px)' },
   contactHero,
+  { src: contactHeroMobile, media: '(max-width: 767px)' },
   requestCta,
 ];
 

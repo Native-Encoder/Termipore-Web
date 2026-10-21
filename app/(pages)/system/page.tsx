@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { systemHero, requestCta } from '@/public/assets';
+import { systemHero, systemHeroMobile, requestCta } from '@/public/assets';
 import type { Metadata } from 'next';
 import ButtonLink from '../../components/button';
 import ComparisonTable, {
@@ -114,6 +114,9 @@ export default function SystemPage() {
         title="A barrier you can recharge without touching the floor."
         lead="Termipore turns termite protection from a one-off soil treatment into part of the building: a sealed pipe network under the slab, served from the wall for the life of the structure."
         image={systemHero}
+        mobileImage={systemHeroMobile}
+        mobileBackdrop="#040c39"
+        mobileClear={0.62}
       />
 
       <Section>
