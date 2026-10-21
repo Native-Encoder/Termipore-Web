@@ -86,8 +86,18 @@ export default function PageHero({
 }
 
 /**
+ * Next's blurred placeholder for a static import, as a CSS background-image
+ * value. Raw `<picture>`/`<img>` markup doesn't get one automatically.
+ */
+export function blurBackground(src: string | StaticImageData) {
+  if (typeof src === 'string') return 'none';
+  const { props } = getImageProps({ src, alt: '', placeholder: 'blur' });
+  return props.style?.backgroundImage ?? 'none';
+}
+
+/**
  * `<picture>` so each device downloads only the photo it shows. Preloads are
- * media-scoped for the same reason.
+ * media-scoped for the same reason. Each photo's blur shows until it loads.
  */
 function ArtDirectedImage({
   image,
@@ -125,7 +135,14 @@ function ArtDirectedImage({
         {...desktop}
         loading="eager"
         fetchPriority="high"
-        className="-z-20 object-cover object-[center_30%] max-md:object-contain max-md:object-bottom"
+        style={
+          {
+            ...desktop.style,
+            '--blur': blurBackground(image),
+            '--blur-mobile': blurBackground(mobileImage),
+          } as React.CSSProperties
+        }
+        className="-z-20 bg-(image:--blur) bg-cover bg-position-[center_30%] bg-no-repeat object-cover object-[center_30%] max-md:bg-(image:--blur-mobile) max-md:bg-contain max-md:bg-bottom max-md:object-contain max-md:object-bottom"
       />
     </picture>
   );
