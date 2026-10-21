@@ -7,6 +7,7 @@ import { WhatsappButton } from './components/icons';
 import ImageWarmup from './components/image-warmup';
 import {
   homeHero,
+  homeHeroMobile,
   architectHero,
   architectHeroMobile,
   engineerHero,
@@ -16,30 +17,45 @@ import {
   homeOwnersHero,
   homeOwnersHeroMobile,
   systemHero,
+  systemHeroMobile,
   specificationsHero,
+  specificationsHeroMobile,
   installersHero,
+  installersHeroMobile,
   faqHero,
+  faqHeroMobile,
   contactHero,
+  contactHeroMobile,
   requestCta,
 } from '@/public/assets';
 
 // Full-width photos fetched in the background so page switches show them
 // instantly. Keep in sync with the `image` passed to PageHero on each page.
+// Each hero is warmed only on screens that show it, so phones don't also
+// download every desktop photo.
+const DESKTOP = '(min-width: 768px)';
+const MOBILE = '(max-width: 767px)';
 const warmupImages = [
-  homeHero,
-  architectHero,
-  { src: architectHeroMobile, media: '(max-width: 767px)' },
-  engineerHero,
-  { src: engineerHeroMobile, media: '(max-width: 767px)' },
-  pestHero,
-  { src: pestHeroMobile, media: '(max-width: 767px)' },
-  homeOwnersHero,
-  { src: homeOwnersHeroMobile, media: '(max-width: 767px)' },
-  systemHero,
-  specificationsHero,
-  installersHero,
-  faqHero,
-  contactHero,
+  { src: homeHero, media: DESKTOP },
+  { src: homeHeroMobile, media: MOBILE },
+  { src: architectHero, media: DESKTOP },
+  { src: architectHeroMobile, media: MOBILE },
+  { src: engineerHero, media: DESKTOP },
+  { src: engineerHeroMobile, media: MOBILE },
+  { src: pestHero, media: DESKTOP },
+  { src: pestHeroMobile, media: MOBILE },
+  { src: homeOwnersHero, media: DESKTOP },
+  { src: homeOwnersHeroMobile, media: MOBILE },
+  { src: systemHero, media: DESKTOP },
+  { src: systemHeroMobile, media: MOBILE },
+  { src: specificationsHero, media: DESKTOP },
+  { src: specificationsHeroMobile, media: MOBILE },
+  { src: installersHero, media: DESKTOP },
+  { src: installersHeroMobile, media: MOBILE },
+  { src: faqHero, media: DESKTOP },
+  { src: faqHeroMobile, media: MOBILE },
+  { src: contactHero, media: DESKTOP },
+  { src: contactHeroMobile, media: MOBILE },
   requestCta,
 ];
 
