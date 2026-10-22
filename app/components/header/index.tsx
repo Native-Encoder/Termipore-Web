@@ -80,8 +80,8 @@ export default function Header() {
       </div>
 
       <div className="border-t border-line bg-surface">
-        <div className="wrap flex min-h-11 [scrollbar-width:none] items-center gap-1.5 overflow-x-auto">
-          <span className="mr-2 font-mono text-[0.7rem] tracking-[0.12em] whitespace-nowrap text-muted uppercase">
+        <div className="wrap flex min-h-12 [scrollbar-width:none] items-center gap-2 overflow-x-auto py-1.5">
+          <span className="mr-1 font-mono text-[0.7rem] tracking-[0.12em] whitespace-nowrap text-muted uppercase">
             For
           </span>
           {audienceLinks.map((link) => (
@@ -89,7 +89,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               aria-current={current(link.href)}
-              className="rounded-full px-3 py-1.5 text-[0.85rem] whitespace-nowrap text-fg no-underline hover:bg-band aria-[current=page]:bg-brand aria-[current=page]:text-white"
+              className="rounded-full border-[1.5px] border-fg/20 bg-bg px-3.5 py-1.5 text-[0.85rem] font-medium whitespace-nowrap text-fg no-underline transition-colors duration-150 hover:border-head hover:text-head aria-[current=page]:border-brand aria-[current=page]:bg-brand aria-[current=page]:text-white"
             >
               {link.label}
             </Link>

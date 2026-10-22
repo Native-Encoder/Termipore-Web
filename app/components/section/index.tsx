@@ -11,7 +11,7 @@ export default function Section({
     <section
       id={id}
       // Clears the sticky header when jumped to.
-      className={`section scroll-mt-28 ${alt ? 'bg-surface' : ''}`}
+      className={`section scroll-mt-32 ${alt ? 'bg-surface' : ''}`}
     >
       <div className={`wrap ${narrow ? 'max-w-215' : ''} ${className}`}>
         {children}
