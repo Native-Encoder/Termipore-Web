@@ -45,7 +45,7 @@ const performance: {
     cells: [
       'Limited space between slab and tile',
       'All areas, including ground level',
-      'High-consistency flow',
+      'High load bearing',
     ],
   },
   {
