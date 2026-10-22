@@ -199,7 +199,10 @@ function HeroImage() {
 
   return (
     <picture className="contents">
+      {/* `hidden`: the picture is display:contents, so an unstyled source
+          would become a grid item and push the diagram onto a new row. */}
       <source
+        className="hidden"
         media={MOBILE_MEDIA}
         srcSet={mobile.srcSet}
         sizes={mobile.sizes}
