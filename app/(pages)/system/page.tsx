@@ -47,8 +47,8 @@ const failures: Fact[] = [
   },
   {
     label: '',
-    title: 'Honeycomb elastomeric wall',
-    text: '40–100 micro-holes per metre around the full circumference, depending on size. They open under pump pressure and close after, so they resist blocking.',
+    title: 'Honeycomb structured pipe',
+    text: '100+ micro-holes per metre around the full circumference, depending on size. They open under pump pressure and close after, so they resist blocking.',
     highlight: true,
     image: systemTermi,
   },
@@ -68,17 +68,17 @@ const comparison: ComparisonRow[] = [
     cells: ['Yes', ['One side only', 'nope'], ['—', 'dim']],
   },
   {
-    label: 'Holes per metre',
+    label: 'Holes per meter 100+',
     cells: [
       ['40–100', 'mono'],
       ['3–4', 'mono', 'nope'],
       ['—', 'dim'],
     ],
   },
-  {
-    label: 'Resists blocking (sand / mud)',
-    cells: ['Yes', ['No', 'nope'], ['—', 'dim']],
-  },
+  // {
+  //   label: 'Resists blocking (sand / mud)',
+  //   cells: ['Yes', ['No', 'nope'], ['—', 'dim']],
+  // },
   {
     label: 'Wall thick enough to resist compression',
     cells: ['Yes', ['No', 'nope'], ['—', 'dim']],
