@@ -1,13 +1,18 @@
 type Children = { children: React.ReactNode; className?: string };
 
 export default function Section({
+  id,
   alt = false,
   narrow = false,
   className = '',
   children,
-}: Children & { alt?: boolean; narrow?: boolean }) {
+}: Children & { id?: string; alt?: boolean; narrow?: boolean }) {
   return (
-    <section className={`section ${alt ? 'bg-surface' : ''}`}>
+    <section
+      id={id}
+      // Clears the sticky header when jumped to.
+      className={`section scroll-mt-28 ${alt ? 'bg-surface' : ''}`}
+    >
       <div className={`wrap ${narrow ? 'max-w-215' : ''} ${className}`}>
         {children}
       </div>

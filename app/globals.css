@@ -219,6 +219,19 @@
   .cmp thead th:nth-child(2) {
     @apply bg-brand text-white;
   }
+  /* Sits in a half-width column: let headers wrap so all four columns fit. */
+  .cmp :is(th, td) {
+    @apply px-[clamp(6px,1.2vw,16px)] max-[560px]:text-[0.78rem];
+  }
+  .cmp .mono {
+    @apply max-[560px]:text-[0.74rem];
+  }
+  .cmp thead th {
+    @apply whitespace-normal max-[560px]:text-[0.74rem];
+  }
+  .cmp tbody th {
+    @apply w-[34%] min-w-0 max-[560px]:w-auto;
+  }
 }
 
 /* Header logo: swap to the light-text variant in dark mode. */

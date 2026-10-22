@@ -13,6 +13,7 @@ export default function PageHero({
   mobileImage,
   mobileBackdrop,
   mobileClear = 0.55,
+  children,
 }: {
   eyebrow: string;
   title: string;
@@ -28,6 +29,8 @@ export default function PageHero({
   mobileBackdrop?: string;
   /** Share of the mobile photo (from the bottom) kept clear of the text. */
   mobileClear?: number;
+  /** Extra content under the lead, e.g. an in-page jump link. */
+  children?: React.ReactNode;
 }) {
   const artDirected = Boolean(image && mobileImage);
 
@@ -79,6 +82,7 @@ export default function PageHero({
           <span className="eyebrow">{eyebrow}</span>
           <h1>{title}</h1>
           {lead && <p className="lead">{lead}</p>}
+          {children}
         </div>
       </div>
     </section>
