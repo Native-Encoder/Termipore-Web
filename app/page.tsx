@@ -135,16 +135,16 @@ const steps: Step[] = [
 const evidence: Fact[] = [
   {
     label: '',
-    title: '300 hours ≈ 10 years outdoors',
-    text: 'No cracking, blocking or jetting. Uniform flow on all sides. Tensile strength and elongation reduced by about 10%.',
-    image: firstImage,
-  },
-  {
-    label: '',
-    title: 'No slow crack growth',
-    text: 'Environmental stress-crack resistance tested at 50 °C for 24 hours.',
+    title: 'Passed Accelerated Weather & UV test',
+    text: 'No degradation after 500hrs.',
     image: secondImage,
   },
+  // {
+  //   label: '',
+  //   title: 'No slow crack growth',
+  //   text: 'Environmental stress-crack resistance tested at 50 °C for 24 hours.',
+  //   image: secondImage,
+  // },
   {
     label: '',
     title: 'No banned hazardous substances',
@@ -356,7 +356,7 @@ export default function Home() {
       <Section alt>
         <SectionHead
           eyebrow="Tested, documented"
-          title="Evidence a specifier can file."
+          title="Product manufactured by ISO 9001, ISO 14001, ISO 45001."
         />
         <FactCards items={evidence} />
       </Section>

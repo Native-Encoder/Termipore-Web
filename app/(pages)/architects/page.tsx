@@ -21,7 +21,7 @@ const clause = `ANTI-TERMITE RETICULATION SYSTEM
 
 Supply and install Termipore Elastomeric Reticulation Pipe beneath all ground-floor slabs, at plinth level, prior to laying of floor finishes.
 
-1. Pipe: TP125175 (17 mm, green marking line) generally; TP095145 (14 mm, orange) where space between slab and tile is limited; TP125195 (19 mm, red) where high-consistency flow is required.
+1. Pipe: TP125175 (17 mm, green marking line) generally; TP095145 (14 mm, orange) where space between slab and tile is limited; TP125195 (19 mm, red) where High weight bearing is required.
 2. Material: thermoplastic elastomeric compound, RoHS compliant; min. burst pressure 50 PSI; operating temperature 0–50 °C.
 3. Layout: perimeter and internal wall lines; min. bending radius 0.3 m (0.4 m for 19 mm); elbows at sharp turns.
 4. Junction boxes: wall-mounted, max. 20 m pipe run per box (0.5 HP pump) unless injected from both ends.
